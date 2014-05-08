@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="42b73c05-e38b-42f8-b097-630356932405" Title="CapDocument Namespace" Url="html/46cde0ff-5c4e-cc75-4f7b-3d9f6937ad17.htm">
+    <HelpTOCNode Id="395f93f3-cb86-4799-b088-f148fa796a9d" Title="Area Class" Url="html/5dd354a7-3435-1626-90a5-be7b437bb98b.htm">
+      <HelpTOCNode Title="Area Constructor " Url="html/493955a5-258c-b2a0-0c50-a44bcdce6809.htm" />
+      <HelpTOCNode Id="0e9286a3-71de-4ef8-bdf8-674f314e1925" Title="Area Fields" Url="html/a4989f05-d0e4-76ff-0416-a427752e93b2.htm">
+        <HelpTOCNode Title="altitude Field" Url="html/8b5b4b5d-3948-863e-bffd-ce982cf3c740.htm" />
+        <HelpTOCNode Title="areaDesc Field" Url="html/cdbe1499-2c07-15f9-e219-d7f049f7e433.htm" />
+        <HelpTOCNode Title="ceiling Field" Url="html/438480ec-1086-0de1-6340-3690bcaa924f.htm" />
+        <HelpTOCNode Title="circle Field" Url="html/b3b4f528-8f60-6d4e-e1df-4b74c9b39dbd.htm" />
+        <HelpTOCNode Title="geocode Field" Url="html/88e64ca8-7135-52a9-a87d-9506f4bd84d0.htm" />
+        <HelpTOCNode Title="polygon Field" Url="html/d97b3463-5ca8-e251-2425-c5f0f3f00ccc.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ca8d2af0-b622-45c0-899d-b91f496a31fd" Title="CapDocument Class" Url="html/d57c38b9-e0e0-cd8f-72f8-9a89c24ac292.htm">
+      <HelpTOCNode Id="96ec25fb-2bca-428b-9dc7-ed27b9e56fd8" Title="CapDocument Constructor " Url="html/a34d2939-d2e2-6215-7588-803dc6822d87.htm">
+        <HelpTOCNode Title="CapDocument Constructor " Url="html/11196f88-40cc-2c46-8222-1834c744aa8a.htm" />
+        <HelpTOCNode Title="CapDocument Constructor (String)" Url="html/ef867bce-b878-1248-a845-dbdb155334b9.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="015da133-88e4-47fe-b01d-d4d6a2c26ce9" Title="CapDocument Fields" Url="html/bd8b0712-016d-6655-c657-66e8e30e4ea6.htm">
+        <HelpTOCNode Title="addresses Field" Url="html/39f560a6-d570-520a-b4e4-8c953a11f14d.htm" />
+        <HelpTOCNode Title="code Field" Url="html/61318087-24e6-99f7-2acb-310d3d3a1373.htm" />
+        <HelpTOCNode Title="identifier Field" Url="html/fc423187-675d-9111-9987-235874c6b97d.htm" />
+        <HelpTOCNode Title="incidents Field" Url="html/5e6d77e0-983e-2f74-5cbe-fb60d064195a.htm" />
+        <HelpTOCNode Title="info Field" Url="html/89ae3ebf-0484-734d-78a7-20debd35302e.htm" />
+        <HelpTOCNode Title="msgType Field" Url="html/0f01e93c-abe0-241c-0c4d-91b00e260675.htm" />
+        <HelpTOCNode Title="note Field" Url="html/e6488665-3946-3cb9-6884-2e65ef7fb4b8.htm" />
+        <HelpTOCNode Title="references Field" Url="html/a55ce45b-b224-d6b7-2364-c1fe163e05b3.htm" />
+        <HelpTOCNode Title="restriction Field" Url="html/219fbb0b-ee56-02ed-94b7-76fe7dc22c69.htm" />
+        <HelpTOCNode Title="scope Field" Url="html/9425fdf4-d1ae-2928-0c47-86e5a5e093c2.htm" />
+        <HelpTOCNode Title="sender Field" Url="html/bb87b835-cd1c-f2dd-12ec-f949c84b589f.htm" />
+        <HelpTOCNode Title="sent Field" Url="html/ffef0398-26ca-9953-0f13-b18b80497457.htm" />
+        <HelpTOCNode Title="source Field" Url="html/a74a0809-efb6-af2e-82d1-f08ede654053.htm" />
+        <HelpTOCNode Title="status Field" Url="html/4632f48d-624c-03ce-db39-b3ea6d82fc7e.htm" />
+        <HelpTOCNode Title="xmlns Field" Url="html/437ba5d0-8168-020c-a19d-d016acdc28b6.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="de3163ad-d01b-4624-bf4b-ff823ad3b974" Title="CapDocument Methods" Url="html/de3d86bd-2ffd-f452-1797-3c09ace2cec1.htm">
+        <HelpTOCNode Title="IsValid Method " Url="html/006a11d0-10d0-c38e-a0da-b15c69ed75d2.htm" />
+        <HelpTOCNode Title="Load Method " Url="html/34639c76-3000-b260-8a46-10de9650d1ef.htm" />
+        <HelpTOCNode Title="ToGeoRssItem Method " Url="html/89a12bae-788e-0d2a-69d0-f07801f7be4a.htm" />
+        <HelpTOCNode Title="ToJson Method " Url="html/b9c55317-24d6-274b-14cb-d62d52f21484.htm" />
+        <HelpTOCNode Title="ToKml Method " Url="html/34f56bb8-cdb0-f0d5-15ca-13a8604c2d6c.htm" />
+        <HelpTOCNode Id="fd7300a6-401c-4072-bb0b-a2755ba5e37f" Title="Validate Method " Url="html/1717a55b-f133-4f8e-10c3-383315d82592.htm">
+          <HelpTOCNode Title="Validate Method " Url="html/da5f737d-11bb-83e8-00f0-07b6d6229e2d.htm" />
+          <HelpTOCNode Title="Validate Method (String)" Url="html/33862f58-7219-bdb3-a73e-21c131913d19.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="13f9563b-1e5a-45c9-8c09-9435273f46c1" Title="CapDocumentCollection Class" Url="html/271156ba-8ddc-bf23-9119-4186fc7a0bbf.htm">
+      <HelpTOCNode Title="CapDocumentCollection Constructor " Url="html/2abc1759-dac3-cb50-900c-29e87935992d.htm" />
+      <HelpTOCNode Id="bedd4837-b205-4822-b04a-95d0d225c845" Title="CapDocumentCollection Fields" Url="html/bf14da99-c173-e26a-4a81-6df5a603fcf9.htm">
+        <HelpTOCNode Title="CapDocuments Field" Url="html/ec04d6a9-a987-821e-9fc4-fd6fa1bb9567.htm" />
+        <HelpTOCNode Title="id Field" Url="html/8a5847a7-23dc-d8bd-a614-552278249abc.htm" />
+        <HelpTOCNode Title="link Field" Url="html/5d83f832-fb74-00ae-5de9-9e526adc0e4f.htm" />
+        <HelpTOCNode Title="name Field" Url="html/c8b13904-cf9b-884e-5b0d-f63487d8127a.htm" />
+        <HelpTOCNode Title="title Field" Url="html/deda3f13-fce7-f89f-c0b0-a405e1ee8449.htm" />
+        <HelpTOCNode Title="updated Field" Url="html/cf64006e-da1c-23f2-a362-73cf3baf17ce.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5008595f-9f22-45a7-aecb-29b11e319313" Title="CapDocumentCollection Methods" Url="html/683b957b-86f4-840f-3143-1c1cd2454105.htm">
+        <HelpTOCNode Title="LoadCapFile Method " Url="html/00ec3d96-3d79-b26b-5bd4-d39bd6a52ae6.htm" />
+        <HelpTOCNode Title="ToGeoRss Method " Url="html/3d5a6880-9beb-d337-2cf7-a2905bf55e49.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e523230c-7cbe-4f8e-9761-70578cd912f2" Title="CapValidateResult Class" Url="html/db880be6-472b-2551-4912-b24b7655deda.htm">
+      <HelpTOCNode Title="CapValidateResult Constructor " Url="html/a1d293ef-cfbe-934c-0013-cf8bf6e4c347.htm" />
+      <HelpTOCNode Id="3108f7ca-b2f7-4983-8384-34e592d94239" Title="CapValidateResult Methods" Url="html/4be636a8-c9c5-1ed8-b574-63fc9dbcfbc6.htm">
+        <HelpTOCNode Title="GetMessage Method " Url="html/46432ce5-ce5c-2856-55c5-be569635f7f0.htm" />
+        <HelpTOCNode Title="GetSubject Method " Url="html/27fed9ad-d6c1-396f-d0b7-2cc6d4e7055a.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="dad4de23-4d5c-4cf0-9943-c0e0cc1b7215" Title="EventCode Class" Url="html/5723df22-8b9b-b355-7d9e-ad2f3428948c.htm">
+      <HelpTOCNode Title="EventCode Constructor " Url="html/217bf01d-6b54-6a99-b575-10f6f3f4a98e.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="7bc85017-ae53-46a3-aa5d-663537d42e0c" Title="Geocode Class" Url="html/5427ff05-f88b-374a-2929-6c7c5297c92b.htm">
+      <HelpTOCNode Title="Geocode Constructor " Url="html/518feb84-d672-6879-5f7f-87a51d1680a9.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="9b928fce-5318-45f6-ae75-668b0ec8f278" Title="GeoCodeUtility Class" Url="html/a5519558-5b4c-be69-efd4-0ebf57c79c76.htm">
+      <HelpTOCNode Id="a9af2b32-e682-4817-b9af-42adedb90d35" Title="GeoCodeUtility Methods" Url="html/ba55e012-7f8d-3e6e-767b-9d3247ab4f0a.htm">
+        <HelpTOCNode Title="GetPolygon Method " Url="html/44be0385-0762-dc82-0e66-ebbb63859510.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5057de8e-c46c-4490-a109-4e9833a85ee6" Title="Info Class" Url="html/a5937a0c-0670-be4d-b831-85a01bbedfbe.htm">
+      <HelpTOCNode Title="Info Constructor " Url="html/28e01155-b06d-51d2-d290-19f989a99377.htm" />
+      <HelpTOCNode Id="e452e5e4-1c6c-4103-a61d-505341781f5f" Title="Info Fields" Url="html/4c01b40c-a112-022f-0fbb-f12d695cdba3.htm">
+        <HelpTOCNode Title="area Field" Url="html/6e367420-bbbe-9ee9-97d4-99b2144fdb44.htm" />
+        <HelpTOCNode Title="category Field" Url="html/33100d4f-22cc-9c32-6658-f2ca92f1a076.htm" />
+        <HelpTOCNode Title="eventCode Field" Url="html/b8d76e11-992f-f09e-aa4a-3fdd5f6ed498.htm" />
+        <HelpTOCNode Title="parameter Field" Url="html/eed9d95b-990f-527e-7066-e2453eac7717.htm" />
+        <HelpTOCNode Title="resource Field" Url="html/48de8fbe-dcd3-a1a2-f968-c7ffd7606853.htm" />
+        <HelpTOCNode Title="responseType Field" Url="html/e0643953-2765-fd62-f8a3-adee408772d9.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7cdb8d0e-2ca2-4fe9-949e-20a09ea1296d" Title="Info Methods" Url="html/471bb539-b903-e3dd-c074-daecc1f69b0d.htm">
+        <HelpTOCNode Title="SetValue Method " Url="html/ff441178-5a1e-7cb1-2ddb-9be3026579e3.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5d31db2b-699e-428a-8ffc-81f4d3a2d316" Title="Info Properties" Url="html/df0cd93f-953e-eb7c-2972-b94df41ae23d.htm">
+        <HelpTOCNode Title="audience Property " Url="html/c6c01ce4-5807-4950-24f4-d42f30e5662a.htm" />
+        <HelpTOCNode Title="certainty Property " Url="html/a18b5093-1668-8d40-4b84-9fa68469df5a.htm" />
+        <HelpTOCNode Title="contact Property " Url="html/d04c3d15-0382-7598-4ca8-29c0465f16ff.htm" />
+        <HelpTOCNode Title="description Property " Url="html/7d031b6e-4362-09ab-3cee-5eeaaaf60ef7.htm" />
+        <HelpTOCNode Title="effective Property " Url="html/df49bf3b-87a9-4a55-a46b-b4e3021a465c.htm" />
+        <HelpTOCNode Title="event Property " Url="html/d57f195d-a159-6c4c-b45a-7e76116d30bb.htm" />
+        <HelpTOCNode Title="expires Property " Url="html/70d2ebf9-a48b-1782-5b47-a1f6d1e0119a.htm" />
+        <HelpTOCNode Title="headline Property " Url="html/dec443b0-bb57-72c7-70e8-445a37604787.htm" />
+        <HelpTOCNode Title="instruction Property " Url="html/6cd1b479-6678-3a65-2d7e-e05378902262.htm" />
+        <HelpTOCNode Title="language Property " Url="html/b27bb10f-f098-3abd-685d-a32d052f60bc.htm" />
+        <HelpTOCNode Title="onset Property " Url="html/5d68fbbc-e5b2-1918-6035-b13de371b29e.htm" />
+        <HelpTOCNode Title="senderName Property " Url="html/a8cf8271-e234-5ecb-81c3-2cfb55831b2b.htm" />
+        <HelpTOCNode Title="severity Property " Url="html/70555356-a132-d785-e13c-f9679f47bc39.htm" />
+        <HelpTOCNode Title="urgency Property " Url="html/5b0b53c3-fcbb-6886-a755-083608ae9565.htm" />
+        <HelpTOCNode Title="web Property " Url="html/8b849eae-1a0a-8c82-a93d-10a48f4964db.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="InfoProp Enumeration" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+    <HelpTOCNode Id="c43fd555-1429-428f-aa87-b2901b31cedf" Title="Parameter Class" Url="html/cc9dc671-ad00-4903-4fe9-eaa0c6b605da.htm">
+      <HelpTOCNode Title="Parameter Constructor " Url="html/1423575d-8b08-662a-7bd7-3af7e0dd5f3a.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="45f6b612-099b-46f8-a492-2afa00617ba3" Title="Resource Class" Url="html/4e3deb9c-11a4-4639-456d-c3ea894d2bd6.htm">
+      <HelpTOCNode Title="Resource Constructor " Url="html/e1a653cb-d305-2254-7c8f-40aaa90fd11f.htm" />
+      <HelpTOCNode Id="688d74d7-2007-4273-83fe-09b606115370" Title="Resource Fields" Url="html/f38c0068-5186-6556-36cc-2630d8dcd946.htm">
+        <HelpTOCNode Title="derefUri Field" Url="html/b4279697-91bd-9a15-7356-cb35329e8bfa.htm" />
+        <HelpTOCNode Title="digest Field" Url="html/a2547c3c-e80b-7e64-5308-1a34d278f3af.htm" />
+        <HelpTOCNode Title="mimeType Field" Url="html/cb6290c9-2dd8-3803-b369-a0fee8405f32.htm" />
+        <HelpTOCNode Title="resourceDesc Field" Url="html/bcd79e84-b5fd-d05e-ac53-86c5a186a63e.htm" />
+        <HelpTOCNode Title="size Field" Url="html/4fd22f2b-0432-b2d7-9a14-f3d1ef89bffd.htm" />
+        <HelpTOCNode Title="uri Field" Url="html/2cccd819-0031-1b16-d7e6-bae76c2c0f88.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cf752246-2808-4a51-af8a-b4982952985e" Title="StringUtility Class" Url="html/971468a8-8084-bc47-21c6-e9f1d9ff1106.htm">
+      <HelpTOCNode Id="53e33987-b390-4486-966b-5b7fd6bb50f5" Title="StringUtility Methods" Url="html/e9080ae9-b256-4f67-7bb0-e51c06779783.htm">
+        <HelpTOCNode Title="ReplaceContent Method " Url="html/1a9dec2c-9ffb-a8fb-5a2b-6c3c0b7cc22d.htm" />
+        <HelpTOCNode Title="SetCotent Method " Url="html/2ef69070-c952-3297-0dfd-61e77cc3496c.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="25c3f5f1-4941-4755-83b5-756538bf0b1e" Title="Value Class" Url="html/d8223de9-b248-1d7b-6e0a-cbb4d0c2ea86.htm">
+      <HelpTOCNode Title="Value Constructor " Url="html/65272888-cbce-0550-ff5a-93af26b083a6.htm" />
+      <HelpTOCNode Id="005201e1-79f4-482a-a198-af57c99b582c" Title="Value Fields" Url="html/27379769-c5a6-036f-5c9c-6353deb73c14.htm">
+        <HelpTOCNode Title="value Field" Url="html/00f32bfd-7e7e-9594-8e14-68dcdf5dd2af.htm" />
+        <HelpTOCNode Title="valueName Field" Url="html/02f67700-7bbe-5158-7673-53600e307541.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

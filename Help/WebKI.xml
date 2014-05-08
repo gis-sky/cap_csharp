@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="addresses field" Url="html/39f560a6-d570-520a-b4e4-8c953a11f14d.htm" />
+  <HelpKINode Title="altitude field" Url="html/8b5b4b5d-3948-863e-bffd-ce982cf3c740.htm" />
+  <HelpKINode Title="Area class">
+    <HelpKINode Title="Area Class" Url="html/5dd354a7-3435-1626-90a5-be7b437bb98b.htm" />
+    <HelpKINode Title="about Area class" Url="html/5dd354a7-3435-1626-90a5-be7b437bb98b.htm" />
+    <HelpKINode Title="constructor" Url="html/493955a5-258c-b2a0-0c50-a44bcdce6809.htm" />
+    <HelpKINode Title="fields" Url="html/a4989f05-d0e4-76ff-0416-a427752e93b2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AREA enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="area field" Url="html/6e367420-bbbe-9ee9-97d4-99b2144fdb44.htm" />
+  <HelpKINode Title="Area.altitude field" Url="html/8b5b4b5d-3948-863e-bffd-ce982cf3c740.htm" />
+  <HelpKINode Title="Area.Area constructor" Url="html/493955a5-258c-b2a0-0c50-a44bcdce6809.htm" />
+  <HelpKINode Title="Area.areaDesc field" Url="html/cdbe1499-2c07-15f9-e219-d7f049f7e433.htm" />
+  <HelpKINode Title="Area.ceiling field" Url="html/438480ec-1086-0de1-6340-3690bcaa924f.htm" />
+  <HelpKINode Title="Area.circle field" Url="html/b3b4f528-8f60-6d4e-e1df-4b74c9b39dbd.htm" />
+  <HelpKINode Title="Area.geocode field" Url="html/88e64ca8-7135-52a9-a87d-9506f4bd84d0.htm" />
+  <HelpKINode Title="Area.polygon field" Url="html/d97b3463-5ca8-e251-2425-c5f0f3f00ccc.htm" />
+  <HelpKINode Title="areaDesc field" Url="html/cdbe1499-2c07-15f9-e219-d7f049f7e433.htm" />
+  <HelpKINode Title="AUDIENCE enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="audience property" Url="html/c6c01ce4-5807-4950-24f4-d42f30e5662a.htm" />
+  <HelpKINode Title="CapDocument class">
+    <HelpKINode Title="CapDocument Class" Url="html/d57c38b9-e0e0-cd8f-72f8-9a89c24ac292.htm" />
+    <HelpKINode Title="about CapDocument class" Url="html/d57c38b9-e0e0-cd8f-72f8-9a89c24ac292.htm" />
+    <HelpKINode Title="constructor" Url="html/a34d2939-d2e2-6215-7588-803dc6822d87.htm" />
+    <HelpKINode Title="fields" Url="html/bd8b0712-016d-6655-c657-66e8e30e4ea6.htm" />
+    <HelpKINode Title="methods" Url="html/de3d86bd-2ffd-f452-1797-3c09ace2cec1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CapDocument namespace" Url="html/46cde0ff-5c4e-cc75-4f7b-3d9f6937ad17.htm" />
+  <HelpKINode Title="CapDocument.addresses field" Url="html/39f560a6-d570-520a-b4e4-8c953a11f14d.htm" />
+  <HelpKINode Title="CapDocument.Area class" Url="html/5dd354a7-3435-1626-90a5-be7b437bb98b.htm" />
+  <HelpKINode Title="CapDocument.CapDocument class" Url="html/d57c38b9-e0e0-cd8f-72f8-9a89c24ac292.htm" />
+  <HelpKINode Title="CapDocument.CapDocument constructor" Url="html/a34d2939-d2e2-6215-7588-803dc6822d87.htm" />
+  <HelpKINode Title="CapDocument.CapDocumentCollection class" Url="html/271156ba-8ddc-bf23-9119-4186fc7a0bbf.htm" />
+  <HelpKINode Title="CapDocument.CapValidateResult class" Url="html/db880be6-472b-2551-4912-b24b7655deda.htm" />
+  <HelpKINode Title="CapDocument.code field" Url="html/61318087-24e6-99f7-2acb-310d3d3a1373.htm" />
+  <HelpKINode Title="CapDocument.EventCode class" Url="html/5723df22-8b9b-b355-7d9e-ad2f3428948c.htm" />
+  <HelpKINode Title="CapDocument.Geocode class" Url="html/5427ff05-f88b-374a-2929-6c7c5297c92b.htm" />
+  <HelpKINode Title="CapDocument.GeoCodeUtility class" Url="html/a5519558-5b4c-be69-efd4-0ebf57c79c76.htm" />
+  <HelpKINode Title="CapDocument.identifier field" Url="html/fc423187-675d-9111-9987-235874c6b97d.htm" />
+  <HelpKINode Title="CapDocument.incidents field" Url="html/5e6d77e0-983e-2f74-5cbe-fb60d064195a.htm" />
+  <HelpKINode Title="CapDocument.Info class" Url="html/a5937a0c-0670-be4d-b831-85a01bbedfbe.htm" />
+  <HelpKINode Title="CapDocument.info field" Url="html/89ae3ebf-0484-734d-78a7-20debd35302e.htm" />
+  <HelpKINode Title="CapDocument.InfoProp enumeration" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="CapDocument.IsValid method" Url="html/006a11d0-10d0-c38e-a0da-b15c69ed75d2.htm" />
+  <HelpKINode Title="CapDocument.Load method" Url="html/34639c76-3000-b260-8a46-10de9650d1ef.htm" />
+  <HelpKINode Title="CapDocument.msgType field" Url="html/0f01e93c-abe0-241c-0c4d-91b00e260675.htm" />
+  <HelpKINode Title="CapDocument.note field" Url="html/e6488665-3946-3cb9-6884-2e65ef7fb4b8.htm" />
+  <HelpKINode Title="CapDocument.Parameter class" Url="html/cc9dc671-ad00-4903-4fe9-eaa0c6b605da.htm" />
+  <HelpKINode Title="CapDocument.references field" Url="html/a55ce45b-b224-d6b7-2364-c1fe163e05b3.htm" />
+  <HelpKINode Title="CapDocument.Resource class" Url="html/4e3deb9c-11a4-4639-456d-c3ea894d2bd6.htm" />
+  <HelpKINode Title="CapDocument.restriction field" Url="html/219fbb0b-ee56-02ed-94b7-76fe7dc22c69.htm" />
+  <HelpKINode Title="CapDocument.scope field" Url="html/9425fdf4-d1ae-2928-0c47-86e5a5e093c2.htm" />
+  <HelpKINode Title="CapDocument.sender field" Url="html/bb87b835-cd1c-f2dd-12ec-f949c84b589f.htm" />
+  <HelpKINode Title="CapDocument.sent field" Url="html/ffef0398-26ca-9953-0f13-b18b80497457.htm" />
+  <HelpKINode Title="CapDocument.source field" Url="html/a74a0809-efb6-af2e-82d1-f08ede654053.htm" />
+  <HelpKINode Title="CapDocument.status field" Url="html/4632f48d-624c-03ce-db39-b3ea6d82fc7e.htm" />
+  <HelpKINode Title="CapDocument.StringUtility class" Url="html/971468a8-8084-bc47-21c6-e9f1d9ff1106.htm" />
+  <HelpKINode Title="CapDocument.ToGeoRssItem method" Url="html/89a12bae-788e-0d2a-69d0-f07801f7be4a.htm" />
+  <HelpKINode Title="CapDocument.ToJson method" Url="html/b9c55317-24d6-274b-14cb-d62d52f21484.htm" />
+  <HelpKINode Title="CapDocument.ToKml method" Url="html/34f56bb8-cdb0-f0d5-15ca-13a8604c2d6c.htm" />
+  <HelpKINode Title="CapDocument.Validate method" Url="html/1717a55b-f133-4f8e-10c3-383315d82592.htm" />
+  <HelpKINode Title="CapDocument.Value class" Url="html/d8223de9-b248-1d7b-6e0a-cbb4d0c2ea86.htm" />
+  <HelpKINode Title="CapDocument.xmlns field" Url="html/437ba5d0-8168-020c-a19d-d016acdc28b6.htm" />
+  <HelpKINode Title="CapDocumentCollection class">
+    <HelpKINode Title="CapDocumentCollection Class" Url="html/271156ba-8ddc-bf23-9119-4186fc7a0bbf.htm" />
+    <HelpKINode Title="about CapDocumentCollection class" Url="html/271156ba-8ddc-bf23-9119-4186fc7a0bbf.htm" />
+    <HelpKINode Title="constructor" Url="html/2abc1759-dac3-cb50-900c-29e87935992d.htm" />
+    <HelpKINode Title="fields" Url="html/bf14da99-c173-e26a-4a81-6df5a603fcf9.htm" />
+    <HelpKINode Title="methods" Url="html/683b957b-86f4-840f-3143-1c1cd2454105.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CapDocumentCollection.CapDocumentCollection constructor" Url="html/2abc1759-dac3-cb50-900c-29e87935992d.htm" />
+  <HelpKINode Title="CapDocumentCollection.CapDocuments field" Url="html/ec04d6a9-a987-821e-9fc4-fd6fa1bb9567.htm" />
+  <HelpKINode Title="CapDocumentCollection.id field" Url="html/8a5847a7-23dc-d8bd-a614-552278249abc.htm" />
+  <HelpKINode Title="CapDocumentCollection.link field" Url="html/5d83f832-fb74-00ae-5de9-9e526adc0e4f.htm" />
+  <HelpKINode Title="CapDocumentCollection.LoadCapFile method" Url="html/00ec3d96-3d79-b26b-5bd4-d39bd6a52ae6.htm" />
+  <HelpKINode Title="CapDocumentCollection.name field" Url="html/c8b13904-cf9b-884e-5b0d-f63487d8127a.htm" />
+  <HelpKINode Title="CapDocumentCollection.title field" Url="html/deda3f13-fce7-f89f-c0b0-a405e1ee8449.htm" />
+  <HelpKINode Title="CapDocumentCollection.ToGeoRss method" Url="html/3d5a6880-9beb-d337-2cf7-a2905bf55e49.htm" />
+  <HelpKINode Title="CapDocumentCollection.updated field" Url="html/cf64006e-da1c-23f2-a362-73cf3baf17ce.htm" />
+  <HelpKINode Title="CapDocuments field" Url="html/ec04d6a9-a987-821e-9fc4-fd6fa1bb9567.htm" />
+  <HelpKINode Title="CapValidateResult class">
+    <HelpKINode Title="CapValidateResult Class" Url="html/db880be6-472b-2551-4912-b24b7655deda.htm" />
+    <HelpKINode Title="about CapValidateResult class" Url="html/db880be6-472b-2551-4912-b24b7655deda.htm" />
+    <HelpKINode Title="constructor" Url="html/a1d293ef-cfbe-934c-0013-cf8bf6e4c347.htm" />
+    <HelpKINode Title="methods" Url="html/4be636a8-c9c5-1ed8-b574-63fc9dbcfbc6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CapValidateResult.CapValidateResult constructor" Url="html/a1d293ef-cfbe-934c-0013-cf8bf6e4c347.htm" />
+  <HelpKINode Title="CapValidateResult.GetMessage method" Url="html/46432ce5-ce5c-2856-55c5-be569635f7f0.htm" />
+  <HelpKINode Title="CapValidateResult.GetSubject method" Url="html/27fed9ad-d6c1-396f-d0b7-2cc6d4e7055a.htm" />
+  <HelpKINode Title="CATEGORY enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="category field" Url="html/33100d4f-22cc-9c32-6658-f2ca92f1a076.htm" />
+  <HelpKINode Title="ceiling field" Url="html/438480ec-1086-0de1-6340-3690bcaa924f.htm" />
+  <HelpKINode Title="CERTAINTY enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="certainty property" Url="html/a18b5093-1668-8d40-4b84-9fa68469df5a.htm" />
+  <HelpKINode Title="circle field" Url="html/b3b4f528-8f60-6d4e-e1df-4b74c9b39dbd.htm" />
+  <HelpKINode Title="code field" Url="html/61318087-24e6-99f7-2acb-310d3d3a1373.htm" />
+  <HelpKINode Title="CONTACT enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="contact property" Url="html/d04c3d15-0382-7598-4ca8-29c0465f16ff.htm" />
+  <HelpKINode Title="derefUri field" Url="html/b4279697-91bd-9a15-7356-cb35329e8bfa.htm" />
+  <HelpKINode Title="DESCRIPTION enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="description property" Url="html/7d031b6e-4362-09ab-3cee-5eeaaaf60ef7.htm" />
+  <HelpKINode Title="digest field" Url="html/a2547c3c-e80b-7e64-5308-1a34d278f3af.htm" />
+  <HelpKINode Title="EFFECTIVE enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="effective property" Url="html/df49bf3b-87a9-4a55-a46b-b4e3021a465c.htm" />
+  <HelpKINode Title="EVENT enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="event property" Url="html/d57f195d-a159-6c4c-b45a-7e76116d30bb.htm" />
+  <HelpKINode Title="EventCode class">
+    <HelpKINode Title="EventCode Class" Url="html/5723df22-8b9b-b355-7d9e-ad2f3428948c.htm" />
+    <HelpKINode Title="about EventCode class" Url="html/5723df22-8b9b-b355-7d9e-ad2f3428948c.htm" />
+    <HelpKINode Title="constructor" Url="html/217bf01d-6b54-6a99-b575-10f6f3f4a98e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EVENTCODE enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="eventCode field" Url="html/b8d76e11-992f-f09e-aa4a-3fdd5f6ed498.htm" />
+  <HelpKINode Title="EventCode.EventCode constructor" Url="html/217bf01d-6b54-6a99-b575-10f6f3f4a98e.htm" />
+  <HelpKINode Title="EXPIRES enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="expires property" Url="html/70d2ebf9-a48b-1782-5b47-a1f6d1e0119a.htm" />
+  <HelpKINode Title="Geocode class">
+    <HelpKINode Title="Geocode Class" Url="html/5427ff05-f88b-374a-2929-6c7c5297c92b.htm" />
+    <HelpKINode Title="about Geocode class" Url="html/5427ff05-f88b-374a-2929-6c7c5297c92b.htm" />
+    <HelpKINode Title="constructor" Url="html/518feb84-d672-6879-5f7f-87a51d1680a9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="geocode field" Url="html/88e64ca8-7135-52a9-a87d-9506f4bd84d0.htm" />
+  <HelpKINode Title="Geocode.Geocode constructor" Url="html/518feb84-d672-6879-5f7f-87a51d1680a9.htm" />
+  <HelpKINode Title="GeoCodeUtility class">
+    <HelpKINode Title="GeoCodeUtility Class" Url="html/a5519558-5b4c-be69-efd4-0ebf57c79c76.htm" />
+    <HelpKINode Title="about GeoCodeUtility class" Url="html/a5519558-5b4c-be69-efd4-0ebf57c79c76.htm" />
+    <HelpKINode Title="methods" Url="html/ba55e012-7f8d-3e6e-767b-9d3247ab4f0a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GeoCodeUtility.GetPolygon method" Url="html/44be0385-0762-dc82-0e66-ebbb63859510.htm" />
+  <HelpKINode Title="GetMessage method" Url="html/46432ce5-ce5c-2856-55c5-be569635f7f0.htm" />
+  <HelpKINode Title="GetPolygon method" Url="html/44be0385-0762-dc82-0e66-ebbb63859510.htm" />
+  <HelpKINode Title="GetSubject method" Url="html/27fed9ad-d6c1-396f-d0b7-2cc6d4e7055a.htm" />
+  <HelpKINode Title="HEADLINE enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="headline property" Url="html/dec443b0-bb57-72c7-70e8-445a37604787.htm" />
+  <HelpKINode Title="id field" Url="html/8a5847a7-23dc-d8bd-a614-552278249abc.htm" />
+  <HelpKINode Title="identifier field" Url="html/fc423187-675d-9111-9987-235874c6b97d.htm" />
+  <HelpKINode Title="incidents field" Url="html/5e6d77e0-983e-2f74-5cbe-fb60d064195a.htm" />
+  <HelpKINode Title="Info class">
+    <HelpKINode Title="Info Class" Url="html/a5937a0c-0670-be4d-b831-85a01bbedfbe.htm" />
+    <HelpKINode Title="about Info class" Url="html/a5937a0c-0670-be4d-b831-85a01bbedfbe.htm" />
+    <HelpKINode Title="constructor" Url="html/28e01155-b06d-51d2-d290-19f989a99377.htm" />
+    <HelpKINode Title="fields" Url="html/4c01b40c-a112-022f-0fbb-f12d695cdba3.htm" />
+    <HelpKINode Title="methods" Url="html/471bb539-b903-e3dd-c074-daecc1f69b0d.htm" />
+    <HelpKINode Title="properties" Url="html/df0cd93f-953e-eb7c-2972-b94df41ae23d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="info field" Url="html/89ae3ebf-0484-734d-78a7-20debd35302e.htm" />
+  <HelpKINode Title="Info.area field" Url="html/6e367420-bbbe-9ee9-97d4-99b2144fdb44.htm" />
+  <HelpKINode Title="Info.audience property" Url="html/c6c01ce4-5807-4950-24f4-d42f30e5662a.htm" />
+  <HelpKINode Title="Info.category field" Url="html/33100d4f-22cc-9c32-6658-f2ca92f1a076.htm" />
+  <HelpKINode Title="Info.certainty property" Url="html/a18b5093-1668-8d40-4b84-9fa68469df5a.htm" />
+  <HelpKINode Title="Info.contact property" Url="html/d04c3d15-0382-7598-4ca8-29c0465f16ff.htm" />
+  <HelpKINode Title="Info.description property" Url="html/7d031b6e-4362-09ab-3cee-5eeaaaf60ef7.htm" />
+  <HelpKINode Title="Info.effective property" Url="html/df49bf3b-87a9-4a55-a46b-b4e3021a465c.htm" />
+  <HelpKINode Title="Info.event property" Url="html/d57f195d-a159-6c4c-b45a-7e76116d30bb.htm" />
+  <HelpKINode Title="Info.eventCode field" Url="html/b8d76e11-992f-f09e-aa4a-3fdd5f6ed498.htm" />
+  <HelpKINode Title="Info.expires property" Url="html/70d2ebf9-a48b-1782-5b47-a1f6d1e0119a.htm" />
+  <HelpKINode Title="Info.headline property" Url="html/dec443b0-bb57-72c7-70e8-445a37604787.htm" />
+  <HelpKINode Title="Info.Info constructor" Url="html/28e01155-b06d-51d2-d290-19f989a99377.htm" />
+  <HelpKINode Title="Info.instruction property" Url="html/6cd1b479-6678-3a65-2d7e-e05378902262.htm" />
+  <HelpKINode Title="Info.language property" Url="html/b27bb10f-f098-3abd-685d-a32d052f60bc.htm" />
+  <HelpKINode Title="Info.onset property" Url="html/5d68fbbc-e5b2-1918-6035-b13de371b29e.htm" />
+  <HelpKINode Title="Info.parameter field" Url="html/eed9d95b-990f-527e-7066-e2453eac7717.htm" />
+  <HelpKINode Title="Info.resource field" Url="html/48de8fbe-dcd3-a1a2-f968-c7ffd7606853.htm" />
+  <HelpKINode Title="Info.responseType field" Url="html/e0643953-2765-fd62-f8a3-adee408772d9.htm" />
+  <HelpKINode Title="Info.senderName property" Url="html/a8cf8271-e234-5ecb-81c3-2cfb55831b2b.htm" />
+  <HelpKINode Title="Info.SetValue method" Url="html/ff441178-5a1e-7cb1-2ddb-9be3026579e3.htm" />
+  <HelpKINode Title="Info.severity property" Url="html/70555356-a132-d785-e13c-f9679f47bc39.htm" />
+  <HelpKINode Title="Info.urgency property" Url="html/5b0b53c3-fcbb-6886-a755-083608ae9565.htm" />
+  <HelpKINode Title="Info.web property" Url="html/8b849eae-1a0a-8c82-a93d-10a48f4964db.htm" />
+  <HelpKINode Title="InfoProp enumeration" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="INSTRUCTION enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="instruction property" Url="html/6cd1b479-6678-3a65-2d7e-e05378902262.htm" />
+  <HelpKINode Title="IsValid method" Url="html/006a11d0-10d0-c38e-a0da-b15c69ed75d2.htm" />
+  <HelpKINode Title="LANGUAGE enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="language property" Url="html/b27bb10f-f098-3abd-685d-a32d052f60bc.htm" />
+  <HelpKINode Title="link field" Url="html/5d83f832-fb74-00ae-5de9-9e526adc0e4f.htm" />
+  <HelpKINode Title="Load method" Url="html/34639c76-3000-b260-8a46-10de9650d1ef.htm" />
+  <HelpKINode Title="LoadCapFile method" Url="html/00ec3d96-3d79-b26b-5bd4-d39bd6a52ae6.htm" />
+  <HelpKINode Title="mimeType field" Url="html/cb6290c9-2dd8-3803-b369-a0fee8405f32.htm" />
+  <HelpKINode Title="msgType field" Url="html/0f01e93c-abe0-241c-0c4d-91b00e260675.htm" />
+  <HelpKINode Title="name field" Url="html/c8b13904-cf9b-884e-5b0d-f63487d8127a.htm" />
+  <HelpKINode Title="note field" Url="html/e6488665-3946-3cb9-6884-2e65ef7fb4b8.htm" />
+  <HelpKINode Title="ONSET enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="onset property" Url="html/5d68fbbc-e5b2-1918-6035-b13de371b29e.htm" />
+  <HelpKINode Title="Parameter class">
+    <HelpKINode Title="Parameter Class" Url="html/cc9dc671-ad00-4903-4fe9-eaa0c6b605da.htm" />
+    <HelpKINode Title="about Parameter class" Url="html/cc9dc671-ad00-4903-4fe9-eaa0c6b605da.htm" />
+    <HelpKINode Title="constructor" Url="html/1423575d-8b08-662a-7bd7-3af7e0dd5f3a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PARAMETER enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="parameter field" Url="html/eed9d95b-990f-527e-7066-e2453eac7717.htm" />
+  <HelpKINode Title="Parameter.Parameter constructor" Url="html/1423575d-8b08-662a-7bd7-3af7e0dd5f3a.htm" />
+  <HelpKINode Title="polygon field" Url="html/d97b3463-5ca8-e251-2425-c5f0f3f00ccc.htm" />
+  <HelpKINode Title="references field" Url="html/a55ce45b-b224-d6b7-2364-c1fe163e05b3.htm" />
+  <HelpKINode Title="ReplaceContent method" Url="html/1a9dec2c-9ffb-a8fb-5a2b-6c3c0b7cc22d.htm" />
+  <HelpKINode Title="Resource class">
+    <HelpKINode Title="Resource Class" Url="html/4e3deb9c-11a4-4639-456d-c3ea894d2bd6.htm" />
+    <HelpKINode Title="about Resource class" Url="html/4e3deb9c-11a4-4639-456d-c3ea894d2bd6.htm" />
+    <HelpKINode Title="constructor" Url="html/e1a653cb-d305-2254-7c8f-40aaa90fd11f.htm" />
+    <HelpKINode Title="fields" Url="html/f38c0068-5186-6556-36cc-2630d8dcd946.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RESOURCE enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="resource field" Url="html/48de8fbe-dcd3-a1a2-f968-c7ffd7606853.htm" />
+  <HelpKINode Title="Resource.derefUri field" Url="html/b4279697-91bd-9a15-7356-cb35329e8bfa.htm" />
+  <HelpKINode Title="Resource.digest field" Url="html/a2547c3c-e80b-7e64-5308-1a34d278f3af.htm" />
+  <HelpKINode Title="Resource.mimeType field" Url="html/cb6290c9-2dd8-3803-b369-a0fee8405f32.htm" />
+  <HelpKINode Title="Resource.Resource constructor" Url="html/e1a653cb-d305-2254-7c8f-40aaa90fd11f.htm" />
+  <HelpKINode Title="Resource.resourceDesc field" Url="html/bcd79e84-b5fd-d05e-ac53-86c5a186a63e.htm" />
+  <HelpKINode Title="Resource.size field" Url="html/4fd22f2b-0432-b2d7-9a14-f3d1ef89bffd.htm" />
+  <HelpKINode Title="Resource.uri field" Url="html/2cccd819-0031-1b16-d7e6-bae76c2c0f88.htm" />
+  <HelpKINode Title="resourceDesc field" Url="html/bcd79e84-b5fd-d05e-ac53-86c5a186a63e.htm" />
+  <HelpKINode Title="RESPONSETYPE enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="responseType field" Url="html/e0643953-2765-fd62-f8a3-adee408772d9.htm" />
+  <HelpKINode Title="restriction field" Url="html/219fbb0b-ee56-02ed-94b7-76fe7dc22c69.htm" />
+  <HelpKINode Title="scope field" Url="html/9425fdf4-d1ae-2928-0c47-86e5a5e093c2.htm" />
+  <HelpKINode Title="sender field" Url="html/bb87b835-cd1c-f2dd-12ec-f949c84b589f.htm" />
+  <HelpKINode Title="SENDERNAME enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="senderName property" Url="html/a8cf8271-e234-5ecb-81c3-2cfb55831b2b.htm" />
+  <HelpKINode Title="sent field" Url="html/ffef0398-26ca-9953-0f13-b18b80497457.htm" />
+  <HelpKINode Title="SetCotent method" Url="html/2ef69070-c952-3297-0dfd-61e77cc3496c.htm" />
+  <HelpKINode Title="SetValue method" Url="html/ff441178-5a1e-7cb1-2ddb-9be3026579e3.htm" />
+  <HelpKINode Title="SEVERITY enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="severity property" Url="html/70555356-a132-d785-e13c-f9679f47bc39.htm" />
+  <HelpKINode Title="size field" Url="html/4fd22f2b-0432-b2d7-9a14-f3d1ef89bffd.htm" />
+  <HelpKINode Title="source field" Url="html/a74a0809-efb6-af2e-82d1-f08ede654053.htm" />
+  <HelpKINode Title="status field" Url="html/4632f48d-624c-03ce-db39-b3ea6d82fc7e.htm" />
+  <HelpKINode Title="StringUtility class">
+    <HelpKINode Title="StringUtility Class" Url="html/971468a8-8084-bc47-21c6-e9f1d9ff1106.htm" />
+    <HelpKINode Title="about StringUtility class" Url="html/971468a8-8084-bc47-21c6-e9f1d9ff1106.htm" />
+    <HelpKINode Title="methods" Url="html/e9080ae9-b256-4f67-7bb0-e51c06779783.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StringUtility.ReplaceContent method" Url="html/1a9dec2c-9ffb-a8fb-5a2b-6c3c0b7cc22d.htm" />
+  <HelpKINode Title="StringUtility.SetCotent method" Url="html/2ef69070-c952-3297-0dfd-61e77cc3496c.htm" />
+  <HelpKINode Title="title field" Url="html/deda3f13-fce7-f89f-c0b0-a405e1ee8449.htm" />
+  <HelpKINode Title="ToGeoRss method" Url="html/3d5a6880-9beb-d337-2cf7-a2905bf55e49.htm" />
+  <HelpKINode Title="ToGeoRssItem method" Url="html/89a12bae-788e-0d2a-69d0-f07801f7be4a.htm" />
+  <HelpKINode Title="ToJson method" Url="html/b9c55317-24d6-274b-14cb-d62d52f21484.htm" />
+  <HelpKINode Title="ToKml method" Url="html/34f56bb8-cdb0-f0d5-15ca-13a8604c2d6c.htm" />
+  <HelpKINode Title="updated field" Url="html/cf64006e-da1c-23f2-a362-73cf3baf17ce.htm" />
+  <HelpKINode Title="URGENCY enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="urgency property" Url="html/5b0b53c3-fcbb-6886-a755-083608ae9565.htm" />
+  <HelpKINode Title="uri field" Url="html/2cccd819-0031-1b16-d7e6-bae76c2c0f88.htm" />
+  <HelpKINode Title="Validate method" Url="html/1717a55b-f133-4f8e-10c3-383315d82592.htm" />
+  <HelpKINode Title="Value class">
+    <HelpKINode Title="Value Class" Url="html/d8223de9-b248-1d7b-6e0a-cbb4d0c2ea86.htm" />
+    <HelpKINode Title="about Value class" Url="html/d8223de9-b248-1d7b-6e0a-cbb4d0c2ea86.htm" />
+    <HelpKINode Title="constructor" Url="html/65272888-cbce-0550-ff5a-93af26b083a6.htm" />
+    <HelpKINode Title="fields" Url="html/27379769-c5a6-036f-5c9c-6353deb73c14.htm" />
+  </HelpKINode>
+  <HelpKINode Title="value field" Url="html/00f32bfd-7e7e-9594-8e14-68dcdf5dd2af.htm" />
+  <HelpKINode Title="Value.Value constructor" Url="html/65272888-cbce-0550-ff5a-93af26b083a6.htm" />
+  <HelpKINode Title="Value.value field" Url="html/00f32bfd-7e7e-9594-8e14-68dcdf5dd2af.htm" />
+  <HelpKINode Title="Value.valueName field" Url="html/02f67700-7bbe-5158-7673-53600e307541.htm" />
+  <HelpKINode Title="valueName field" Url="html/02f67700-7bbe-5158-7673-53600e307541.htm" />
+  <HelpKINode Title="WEB enumeration member" Url="html/8c74eb21-5131-185a-d7f4-bad0dd5352b0.htm" />
+  <HelpKINode Title="web property" Url="html/8b849eae-1a0a-8c82-a93d-10a48f4964db.htm" />
+  <HelpKINode Title="xmlns field" Url="html/437ba5d0-8168-020c-a19d-d016acdc28b6.htm" />
+</HelpKI>

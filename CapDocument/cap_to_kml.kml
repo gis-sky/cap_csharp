@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+	<Document>
+		<Style id="transBluePoly"><!-- 繪圖所需顏色請參見"CAP轉KML塗色說明" -->
+			<LineStyle>
+				<width>1.5</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>7dff0000</color>
+			</PolyStyle>
+		</Style>
+		<name>alert</name><!-- name固定為alert -->
+		
+		<description><!-- 將cap裡<alert>內的欄位都放這裡 -->
+      {0}
+			<!--<identifier>CWB-Weather_extremely-rain_201307120830</identifier>
+			<sender>weather@cwb.gov.tw</sender>
+			<sent>2013-07-12T08:30:00+08:00</sent>
+			<status>Actual</status>
+			<msgType>Update</msgType>
+			<scope>Public</scope>
+			<references>weather@cwb.gov.tw,CWB-Weather_extremely-rain_201307120530,2013-07-12T05:30:00+08:00</references>-->
+		</description>
+		
+	  {1}	
+  
+	</Document>
+</kml>
