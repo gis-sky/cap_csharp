@@ -95,6 +95,7 @@ namespace CapDocument
             {
                 perform(xDocument);
             }
+            fileStream.Close();
         }
 
         /// <summary>
@@ -119,6 +120,7 @@ namespace CapDocument
             {
                 perform(xDocument);
             }
+            fileStream.Close();
         }
 
         /// <summary>
@@ -246,7 +248,7 @@ namespace CapDocument
                             sbInfoItem.Append(string.Format("<{0}>{1}</{0}>", "category", c));
                         }
                     }
-                    sbAlert.Append(string.Format("<{0}>{1}</{0}>", "event", i.@event));
+                    sbInfoItem.Append(string.Format("<{0}>{1}</{0}>", "event", i.@event));
                     if (i.responseType.Any())
                     {
                         foreach (var r in i.responseType)
@@ -275,7 +277,6 @@ namespace CapDocument
                     StringUtility.SetCotent(sbInfoItem, "instruction", i.instruction);
                     StringUtility.SetCotent(sbInfoItem, "web", i.web);
                     StringUtility.SetCotent(sbInfoItem, "contact", i.contact);
-                    StringUtility.SetCotent(sbInfoItem, "headline", i.headline);
                     if (i.parameter.Any())
                     {
                         foreach (var p in i.parameter)
@@ -648,7 +649,7 @@ namespace CapDocument
                             {
                                 foreach (var circle in areaElements.Where(e => e.Name.LocalName.Equals("circle")).ToList())
                                 {
-                                    areaObj.polygon.Add(circle.Value);
+                                    areaObj.circle.Add(circle.Value);
                                 }
                             }
                             foreach (string areaElementName in new ArrayList() {"altitude", "ceiling"})
