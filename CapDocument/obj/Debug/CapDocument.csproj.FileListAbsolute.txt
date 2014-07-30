@@ -1,9 +1,0 @@
-C:\Users\snowdaily\Documents\Visual Studio 2012\Projects\WebSite1\CapDocument\bin\Debug\CapDocument.dll.config
-C:\Users\snowdaily\Documents\Visual Studio 2012\Projects\WebSite1\CapDocument\bin\Debug\CapDocument.XML
-C:\Users\snowdaily\Documents\Visual Studio 2012\Projects\WebSite1\CapDocument\bin\Debug\CapDocument.dll
-C:\Users\snowdaily\Documents\Visual Studio 2012\Projects\WebSite1\CapDocument\bin\Debug\CapDocument.pdb
-C:\Users\snowdaily\Documents\Visual Studio 2012\Projects\WebSite1\CapDocument\bin\Debug\Newtonsoft.Json.dll
-C:\Users\snowdaily\Documents\Visual Studio 2012\Projects\WebSite1\CapDocument\bin\Debug\Newtonsoft.Json.xml
-C:\Users\snowdaily\Documents\Visual Studio 2012\Projects\WebSite1\CapDocument\obj\Debug\CapDocument.csprojResolveAssemblyReference.cache
-C:\Users\snowdaily\Documents\Visual Studio 2012\Projects\WebSite1\CapDocument\obj\Debug\CapDocument.dll
-C:\Users\snowdaily\Documents\Visual Studio 2012\Projects\WebSite1\CapDocument\obj\Debug\CapDocument.pdb
