@@ -28,7 +28,7 @@ namespace CapDocument
         /// </summary>
         /// <param name="geocode">geocode代碼</param>
         /// <param name="type">type</param>
-        /// <param name="geocodePath">geocode路徑，該路徑底下應有kml、gml兩個欄位</param>
+        /// <param name="geocodePath">geocode路徑，該路徑底下應有kml、gml兩個資料夾</param>
         /// <returns></returns>
         public static string GetPolygon(string geocode, string type, string geocodePath)
         {
