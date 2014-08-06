@@ -1,35 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Web
-VisualStudioVersion = 12.0.30501.0
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite1(1)", "http://localhost:37832", "{E8968A60-AC9D-4CF9-82EC-7886C4D07CA7}"
-	ProjectSection(WebsiteProperties) = preProject
-		SccProjectName = "SAK"
-		SccAuxPath = "SAK"
-		SccLocalPath = "SAK"
-		SccProvider = "SAK"
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		ProjectReferences = "{4895490e-ec7d-48e2-9130-a41c46b1aae1}|CapDocument.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_37832"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\WebSite1\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_37832\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_37832"
-		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\WebSite1\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_37832\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\..\WebSites\WebSite1\"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
-EndProject
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapDocument", "CapDocument\CapDocument.csproj", "{4895490E-EC7D-48E2-9130-A41C46B1AAE1}"
 EndProject
 Global
@@ -39,11 +10,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E8968A60-AC9D-4CF9-82EC-7886C4D07CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8968A60-AC9D-4CF9-82EC-7886C4D07CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8968A60-AC9D-4CF9-82EC-7886C4D07CA7}.Debug140603|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8968A60-AC9D-4CF9-82EC-7886C4D07CA7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8968A60-AC9D-4CF9-82EC-7886C4D07CA7}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{4895490E-EC7D-48E2-9130-A41C46B1AAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4895490E-EC7D-48E2-9130-A41C46B1AAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4895490E-EC7D-48E2-9130-A41C46B1AAE1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Xml.Linq;
 using Newtonsoft.Json;
+using System.Web;
 
 namespace CapDocument
 {
@@ -275,7 +276,7 @@ namespace CapDocument
                     StringUtility.SetCotent(sbInfoItem, "headline", i.headline);
                     StringUtility.SetCotent(sbInfoItem, "description", i.description);
                     StringUtility.SetCotent(sbInfoItem, "instruction", i.instruction);
-                    StringUtility.SetCotent(sbInfoItem, "web", i.web);
+                    StringUtility.SetCotent(sbInfoItem, "web",  HttpUtility.HtmlEncode(i.web));
                     StringUtility.SetCotent(sbInfoItem, "contact", i.contact);
                     //StringUtility.SetCotent(sbInfoItem, "headline", i.headline);
                     if (i.parameter.Any())
@@ -429,7 +430,7 @@ namespace CapDocument
                     StringUtility.SetCotent(sbInfoItem, "headline", i.headline);
                     StringUtility.SetCotent(sbInfoItem, "description", i.description);
                     StringUtility.SetCotent(sbInfoItem, "instruction", i.instruction);
-                    StringUtility.SetCotent(sbInfoItem, "web", i.web);
+                    StringUtility.SetCotent(sbInfoItem, "web", HttpUtility.HtmlEncode(i.web));
                     StringUtility.SetCotent(sbInfoItem, "contact", i.contact);
                     StringUtility.SetCotent(sbInfoItem, "headline", i.headline);
                     if (i.parameter.Any())
