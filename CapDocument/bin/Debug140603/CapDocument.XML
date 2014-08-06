@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CapDocument</name>
+    </assembly>
+    <members>
+        <member name="F:CapDocument.Area.areaDesc">
+            <summary>
+            區域描述
+            </summary>
+        </member>
+        <member name="F:CapDocument.Area.polygon">
+            <summary>
+            多邊形各點的坐標
+            </summary>
+        </member>
+        <member name="F:CapDocument.Area.circle">
+            <summary>
+            中心點坐標及半徑
+            </summary>
+        </member>
+        <member name="F:CapDocument.Area.geocode">
+            <summary>
+            區域代碼
+            </summary>
+        </member>
+        <member name="F:CapDocument.Area.altitude">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="F:CapDocument.Area.ceiling">
+            <summary>
+            區域的最高高度值
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocumentCollection.id">
+            <summary>
+            GeoRss ID
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocumentCollection.title">
+            <summary>
+            GeoRss標題
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocumentCollection.updated">
+            <summary>
+            GeoRss更新時間
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocumentCollection.name">
+            <summary>
+            GeoRss名稱
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocumentCollection.link">
+            <summary>
+            GeoRss連結
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocumentCollection.CapDocuments">
+            <summary>
+            Cap物件
+            </summary>
+        </member>
+        <member name="M:CapDocument.CapDocumentCollection.LoadCapFile(System.String)">
+            <summary>
+            讀取Cap檔案
+            </summary>
+            <param name="path">Cap檔案路徑</param>
+        </member>
+        <member name="M:CapDocument.CapDocumentCollection.ToGeoRss">
+            <summary>
+            轉出GeoRss字串
+            </summary>
+            <returns>GeoRss字串</returns>
+        </member>
+        <member name="M:CapDocument.CapValidateResult.GetSubject">
+            <summary>
+            取得主旨
+            </summary>
+            <returns>主旨</returns>
+        </member>
+        <member name="M:CapDocument.CapValidateResult.GetMessage">
+            <summary>
+            取得訊息
+            </summary>
+            <returns>訊息</returns>
+        </member>
+        <member name="M:CapDocument.CapValidator.Validate(CapDocument.CapDocument)">
+            <summary>
+            驗證Cap物件
+            </summary>
+            <param name="capDocument">Cap物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:CapDocument.CapValidator.Validate(System.Xml.Linq.XDocument)">
+            <summary>
+            驗證Cap XML物件
+            </summary>
+            <param name="xDocument">Cap XML物件</param>
+            <returns></returns>
+        </member>
+        <member name="F:CapDocument.Value.valueName">
+            <summary>
+            Value Name
+            </summary>
+        </member>
+        <member name="F:CapDocument.Value.value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="M:CapDocument.GeoCodeUtility.GetPolygon(System.String,System.String)">
+            <summary>
+            取得Polygon
+            </summary>
+            <param name="geocode">geocode</param>
+            <param name="type">type</param>
+            <returns>Polygon字串</returns>
+        </member>
+        <member name="F:CapDocument.CapDocument.identifier">
+            <summary>
+            警報識別碼
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.sender">
+            <summary>
+            來源者識別碼
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.sent">
+            <summary>
+            發送日期與時間
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.status">
+            <summary>
+            類別狀態碼
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.msgType">
+            <summary>
+            指令類別碼
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.source">
+            <summary>
+            來源簡述
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.scope">
+            <summary>
+            接收者範圍
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.restriction">
+            <summary>
+            說明接受者條件
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.addresses">
+            <summary>
+            接收者列表
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.code">
+            <summary>
+            特殊處理代碼
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.note">
+            <summary>
+            描述說明
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.references">
+            <summary>
+            相關的識別碼
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.incidents">
+            <summary>
+            相關資訊列表
+            </summary>
+        </member>
+        <member name="F:CapDocument.CapDocument.info">
+            <summary>
+            Info
+            </summary>
+        </member>
+        <member name="M:CapDocument.CapDocument.IsValid">
+            <summary>
+            檢查資料驗證是否通過
+            </summary>
+            <returns>驗證結果</returns>
+        </member>
+        <member name="M:CapDocument.CapDocument.Load(System.String)">
+            <summary>
+            讀取Cap檔案
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:CapDocument.CapDocument.Validate">
+            <summary>
+            驗證CapDocument物件
+            </summary>
+            <returns>驗證結果</returns>
+        </member>
+        <member name="M:CapDocument.CapDocument.Validate(System.String)">
+            <summary>
+            驗證Cap檔案
+            </summary>
+            <returns>驗證結果</returns>
+        </member>
+        <member name="M:CapDocument.CapDocument.ToJson">
+            <summary>
+            將Cap物件轉為Json
+            </summary>
+            <returns>Json字串</returns>
+        </member>
+        <member name="M:CapDocument.CapDocument.ToGeoRssItem">
+            <summary>
+            將Cap物件轉為GeoRss
+            </summary>
+            <returns>GeoRss字串</returns>
+        </member>
+        <member name="M:CapDocument.CapDocument.ToCap">
+            <summary>
+            將Cap物件轉為Cap
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CapDocument.CapDocument.ToKml">
+            <summary>
+            將Cap物件轉為Kml
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:CapDocument.Info.category">
+            <summary>
+            訊息種類
+            </summary>
+        </member>
+        <member name="F:CapDocument.Info.responseType">
+            <summary>
+            應變代碼
+            </summary>
+        </member>
+        <member name="F:CapDocument.Info.eventCode">
+            <summary>
+            事件代碼
+            </summary>
+        </member>
+        <member name="F:CapDocument.Info.parameter">
+            <summary>
+            參數傳遞
+            </summary>
+        </member>
+        <member name="F:CapDocument.Info.resource">
+            <summary>
+            Resource
+            </summary>
+        </member>
+        <member name="F:CapDocument.Info.area">
+            <summary>
+            Area
+            </summary>
+        </member>
+        <member name="M:CapDocument.Info.SetValue(CapDocument.InfoProp,System.String)">
+            <summary>
+            資料設定
+            </summary>
+            <param name="prop">Info屬性</param>
+            <param name="value">值</param>
+        </member>
+        <member name="P:CapDocument.Info.language">
+            <summary>
+            語言代碼
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.event">
+            <summary>
+            事件主題類型描述
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.urgency">
+            <summary>
+            緊急代碼
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.severity">
+            <summary>
+            嚴重代碼
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.certainty">
+            <summary>
+            確定代碼
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.audience">
+            <summary>
+            描述可能對象
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.effective">
+            <summary>
+            生效日期與時間
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.onset">
+            <summary>
+            預期影響日期與時間
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.expires">
+            <summary>
+            到期日期與時間
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.senderName">
+            <summary>
+            發送者名稱
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.headline">
+            <summary>
+            標題
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.instruction">
+            <summary>
+            建議採取應變方案
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.web">
+            <summary>
+            網頁資訊
+            </summary>
+        </member>
+        <member name="P:CapDocument.Info.contact">
+            <summary>
+            聯絡資訊
+            </summary>
+        </member>
+        <member name="T:CapDocument.InfoProp">
+            <summary>
+            Info屬性
+            </summary>
+        </member>
+        <member name="M:CapDocument.StringUtility.SetCotent(System.Text.StringBuilder,System.String,System.String)">
+            <summary>
+            設定內容
+            </summary>
+            <param name="sb">字串容器</param>
+            <param name="tagName">Tag名稱</param>
+            <param name="content">內容</param>
+            <returns>處裡完成字串</returns>
+        </member>
+        <member name="M:CapDocument.StringUtility.ReplaceContent(System.String,System.String,System.String)">
+            <summary>
+            置換內容
+            </summary>
+            <param name="temp">置換字串</param>
+            <param name="target">目標變數</param>
+            <param name="content">內容</param>
+            <returns>處裡完成字串</returns>
+        </member>
+    </members>
+</doc>

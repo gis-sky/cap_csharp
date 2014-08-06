@@ -10,7 +10,7 @@ namespace CapDocument
     {
         public string resourceDesc { get; set; }
         public string mimeType { get; set; }
-        public int size { get; set; }
+        public string size { get; set; }
         public string uri { get; set; }
         public string derefUri { get; set; }
         public string digest { get; set; }

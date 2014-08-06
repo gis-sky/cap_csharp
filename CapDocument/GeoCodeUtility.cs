@@ -19,20 +19,7 @@ namespace CapDocument
         public static string GetPolygon(string geocode, string type)
         {
             string path = ConfigurationManager.AppSettings["geocodePath"];
-            
-            return GetPolygon(geocode, type, path);
-        }
-
-        /// <summary>
-        /// 取得Polygon
-        /// </summary>
-        /// <param name="geocode">geocode代碼</param>
-        /// <param name="type">type</param>
-        /// <param name="geocodePath">geocode路徑，該路徑底下應有kml、gml兩個資料夾</param>
-        /// <returns></returns>
-        public static string GetPolygon(string geocode, string type, string geocodePath)
-        {
-            DirectoryInfo di = new DirectoryInfo(geocodePath);
+            DirectoryInfo di = new DirectoryInfo(path);
             switch (type)
             {
                 case "gml":

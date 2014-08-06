@@ -277,6 +277,7 @@ namespace CapDocument
                     StringUtility.SetCotent(sbInfoItem, "instruction", i.instruction);
                     StringUtility.SetCotent(sbInfoItem, "web", i.web);
                     StringUtility.SetCotent(sbInfoItem, "contact", i.contact);
+                    //StringUtility.SetCotent(sbInfoItem, "headline", i.headline);
                     if (i.parameter.Any())
                     {
                         foreach (var p in i.parameter)
@@ -294,7 +295,7 @@ namespace CapDocument
                         {
                             StringUtility.SetCotent(sbResourceItem, "resourceDesc", r.resourceDesc);
                             StringUtility.SetCotent(sbResourceItem, "mimeType", r.mimeType);
-                            StringUtility.SetCotent(sbResourceItem, "size", r.size.ToString());
+                            StringUtility.SetCotent(sbResourceItem, "size", r.size);
                             StringUtility.SetCotent(sbResourceItem, "uri", r.uri);
                             StringUtility.SetCotent(sbResourceItem, "derefUri", r.derefUri);
                             StringUtility.SetCotent(sbResourceItem, "digest", r.digest);
@@ -401,7 +402,7 @@ namespace CapDocument
                             sbInfoItem.Append(string.Format("<{0}>{1}</{0}>", "category", c));
                         }
                     }
-                    sbAlert.Append(string.Format("<{0}>{1}</{0}>", "event", i.@event));
+                    sbInfoItem.Append(string.Format("<{0}>{1}</{0}>", "event", i.@event));
                     if (i.responseType.Any())
                     {
                         foreach (var r in i.responseType)
@@ -616,7 +617,7 @@ namespace CapDocument
                             foreach (string resourceElementName in new ArrayList() { "mimeType", "size", "uri", "derefUri", "digest" })
                             {
                                 if (resourceElements.Any(e => e.Name.LocalName.Equals(resourceElementName)))
-                                    typeof(Area).GetProperty(resourceElementName).SetValue(resourceObj, resourceElements.FirstOrDefault(a => a.Name.LocalName.Equals(resourceElementName)).Value);
+                                    typeof(Resource).GetProperty(resourceElementName).SetValue(resourceObj, resourceElements.FirstOrDefault(a => a.Name.LocalName.Equals(resourceElementName)).Value);
                             }
                             i.resource.Add(resourceObj);
                         }
@@ -644,6 +645,11 @@ namespace CapDocument
                                 {
                                     areaObj.polygon.Add(polygon.Value);
                                 }
+                                foreach (string areaElementName in new ArrayList() { "altitude", "ceiling" })
+                                {
+                                    if (areaElements.Any(e => e.Name.LocalName.Equals(areaElementName)))
+                                        typeof(Area).GetProperty(areaElementName).SetValue(areaObj, areaElements.FirstOrDefault(a => a.Name.LocalName.Equals(areaElementName)).Value);
+                                }
                             }
                             if (areaElements.Any(e => e.Name.LocalName.Equals("circle")))
                             {
@@ -652,11 +658,7 @@ namespace CapDocument
                                     areaObj.circle.Add(circle.Value);
                                 }
                             }
-                            foreach (string areaElementName in new ArrayList() {"altitude", "ceiling"})
-                            {
-                                if (areaElements.Any(e => e.Name.LocalName.Equals(areaElementName)))
-                                    typeof(Area).GetProperty(areaElementName).SetValue(areaObj, areaElements.FirstOrDefault(a => a.Name.LocalName.Equals(areaElementName)).Value);
-                            }
+                            
                             i.area.Add(areaObj);
                         }
                     }

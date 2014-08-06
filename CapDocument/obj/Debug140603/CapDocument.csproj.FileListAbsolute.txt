@@ -1,0 +1,8 @@
+C:\Users\Hugh\Documents\GitHub\cap_csharp\CapDocument\bin\Debug140603\CapDocument.dll.config
+C:\Users\Hugh\Documents\GitHub\cap_csharp\CapDocument\bin\Debug140603\CapDocument.dll
+C:\Users\Hugh\Documents\GitHub\cap_csharp\CapDocument\bin\Debug140603\CapDocument.pdb
+C:\Users\Hugh\Documents\GitHub\cap_csharp\CapDocument\bin\Debug140603\CapDocument.XML
+C:\Users\Hugh\Documents\GitHub\cap_csharp\CapDocument\bin\Debug140603\Newtonsoft.Json.dll
+C:\Users\Hugh\Documents\GitHub\cap_csharp\CapDocument\bin\Debug140603\Newtonsoft.Json.xml
+C:\Users\Hugh\Documents\GitHub\cap_csharp\CapDocument\obj\Debug140603\CapDocument.dll
+C:\Users\Hugh\Documents\GitHub\cap_csharp\CapDocument\obj\Debug140603\CapDocument.pdb
