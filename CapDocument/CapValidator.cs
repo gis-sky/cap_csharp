@@ -21,7 +21,8 @@ namespace CapDocument
                 "sent",
                 "status",
                 "msgType",
-                "scope"
+                "scope",
+                "code"
             };
 
         private static readonly List<string> INFO_TAGS = new List<string>()
@@ -55,9 +56,7 @@ namespace CapDocument
                 "responseType",
                 "audience",
                 "eventCode",
-                "effective",
                 "onset",
-                "expires",
                 "senderName",
                 "headline",
                 "description",
@@ -65,15 +64,15 @@ namespace CapDocument
                 "web",
                 "contact",
                 "parameter",
-                "resource",
-                "area"
+                "resource"
             };
 
         private static readonly Dictionary<string, Regex> INFO_REGEX_DIC = new Dictionary<string, Regex>()
             {
                 {"effective", new Regex(@"\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d[-,+]\d\d:\d\d")},
                 {"onset", new Regex(@"\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d[-,+]\d\d:\d\d")},
-                {"expires", new Regex(@"\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d[-,+]\d\d:\d\d")}
+                {"expires", new Regex(@"\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d[-,+]\d\d:\d\d")},
+                {"headline", new Regex(@"^.{1,20}$")}
             };
 
         private static readonly Dictionary<string, List<string>> INFO_VALID_DIC = new Dictionary<string, List<string>>()
@@ -186,11 +185,34 @@ namespace CapDocument
                         {
                             capValidateResults.Add(new CapValidateResult(name, string.Format("{0}資料格式錯誤.", name)));
                         }
+                        else
+                        {
+                            if (!capDocument.msgType.Equals("Alert") && string.IsNullOrEmpty(capDocument.references))
+                            {
+                                capValidateResults.Add(new CapValidateResult("references", string.Format("{0}必須存在.", "references")));
+                            }
+                        }
                         break;
                     case "scope":
                         if (!SCOPE.Contains(capDocument.scope))
                         {
                             capValidateResults.Add(new CapValidateResult(name, string.Format("{0}資料格式錯誤.", name)));
+                        }
+                        else if (capDocument.scope.Equals("restricted"))
+                        {
+                            if (!string.IsNullOrEmpty(capDocument.restriction))
+                                capValidateResults.Add(new CapValidateResult("restriction", string.Format("必須要有{0}節點.", "restriction")));
+                        }
+                        else if (capDocument.scope.Equals("private"))
+                        {
+                            if (!string.IsNullOrEmpty(capDocument.addresses))
+                                capValidateResults.Add(new CapValidateResult("addresses", string.Format("必須要有{0}節點.", "addresses")));
+                        }
+                        break;
+                    case "code":
+                        if (!capDocument.code.Any())
+                        {
+                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}不可為空.", name)));
                         }
                         break;
                 }
@@ -215,8 +237,41 @@ namespace CapDocument
                                 capValidateResults.Add(new CapValidateResult(name, string.Format("{0}資料格式錯誤.", name)));
                                 continue;
                             }
+                            else if (name.Equals("expires"))
+                            {
+                                var dtExpires = new DateTime();
+                                DateTime.TryParse(value, out dtExpires);
+                                var onsetStr = GetObjectValue(typeof (Info), "onset", info);
+                                if (onsetStr != null)
+                                {
+                                    if (INFO_REGEX_DIC[name].IsMatch(onsetStr))
+                                    {
+                                        var dt = new DateTime();
+                                        DateTime.TryParse(onsetStr, out dt);
+                                        if (dtExpires < dt)
+                                        {
+                                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}必須晚於onset.", name)));
+                                            continue;
+                                        }
+                                    }
+                                }
+                                var effectiveStr = GetObjectValue(typeof(Info), "effective", info);
+                                if (effectiveStr != null)
+                                {
+                                    if (INFO_REGEX_DIC[name].IsMatch(effectiveStr))
+                                    {
+                                        var dt = new DateTime();
+                                        DateTime.TryParse(effectiveStr, out dt);
+                                        if (dtExpires < dt)
+                                        {
+                                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}必須晚於effective.", name)));
+                                            continue;
+                                        }
+                                    }
+                                }
+                            }
                         }
-                        if (INFO_VALID_DIC.ContainsKey(name))
+                        else if (INFO_VALID_DIC.ContainsKey(name))
                         {
                             if (!INFO_VALID_DIC[name].Contains(value))
                             {
@@ -224,8 +279,21 @@ namespace CapDocument
                                 continue;
                             }
                         }
+                        else if (name.Equals("area"))
+                        {
+                            var areaDesc = GetObjectValue(typeof(Info), "areaDesc", info);
+                            if (string.IsNullOrEmpty(areaDesc))
+                            {
+                                capValidateResults.Add(new CapValidateResult("areaDesc", string.Format("必須有{0}節點.", "areaDesc")));
+                                continue;
+                            }
+                        }
                     }
                 }
+            }
+            else
+            {
+                capValidateResults.Add(new CapValidateResult("info", string.Format("{0}至少有一個以上.", "info")));
             }
             return capValidateResults;
         }
@@ -264,6 +332,12 @@ namespace CapDocument
                         {
                             capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點資料格式錯誤.", name)));
                         }
+                        else
+                        {
+                            DateTime dt;
+                            if (!DateTime.TryParse(tag.Value, out dt))
+                                capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點資料格式錯誤.", name)));
+                        }
                         break;
                     case "status":
                         if (!STATUS.Contains(tag.Value))
@@ -276,11 +350,38 @@ namespace CapDocument
                         {
                             capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點資料格式錯誤.", name)));
                         }
+                        else
+                        {
+                            if (!tag.Value.Equals("Alert"))
+                            {
+                                var referencesElements = xDocument.Root.Elements().Where(x => x.Name.LocalName.Equals("references")).ToList();
+                                if (!referencesElements.Any())
+                                {
+                                    capValidateResults.Add(new CapValidateResult("references", string.Format("必須有{0}節點.", "references")));
+                                }
+                            }
+                        }
                         break;
                     case "scope":
                         if (!SCOPE.Contains(tag.Value))
                         {
                             capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點資料格式錯誤.", name)));
+                        }
+                        else if (tag.Value.Equals("restricted"))
+                        {
+                            var restrictionElements = xDocument.Root.Elements().Where(x => x.Name.LocalName.Equals("restriction")).ToList();
+                            if (!restrictionElements.Any())
+                            {
+                                capValidateResults.Add(new CapValidateResult("restriction", string.Format("必須要有{0}節點.", "restriction")));
+                            }
+                        }
+                        else if (tag.Value.Equals("private"))
+                        {
+                            var addressesElements = xDocument.Root.Elements().Where(x => x.Name.LocalName.Equals("addresses")).ToList();
+                            if (!addressesElements.Any())
+                            {
+                                capValidateResults.Add(new CapValidateResult("addresses", string.Format("必須要有{0}節點.", "addresses")));
+                            }
                         }
                         break;
                 }
@@ -311,6 +412,57 @@ namespace CapDocument
                                 capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點資料格式錯誤.", name)));
                                 continue;
                             }
+                            else if (name.Equals("expires"))
+                            {
+                                DateTime dt;
+                                if (!DateTime.TryParse(tag.Value, out dt))
+                                    capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點資料格式錯誤.", name)));
+
+                                var dtExpires = new DateTime();
+                                DateTime.TryParse(tag.Value, out dtExpires);
+                                var firstOrDefault =
+                                    info.Elements()
+                                        .Where(x => x.Name.LocalName.Equals("onset"))
+                                        .ToList()
+                                        .FirstOrDefault();
+                                if (firstOrDefault != null)
+                                {
+                                    var onset = firstOrDefault.Value;
+                                    if (INFO_REGEX_DIC[name].IsMatch(onset))
+                                    {
+                                        dt = new DateTime();
+                                        DateTime.TryParse(onset, out dt);
+                                        if (dtExpires < dt)
+                                        {
+                                            capValidateResults.Add(new CapValidateResult(name,
+                                                                                         string.Format("{0}必須晚於onset.",
+                                                                                                       name)));
+                                            continue;
+                                        }
+                                    }
+                                }
+                                firstOrDefault =
+                                    info.Elements()
+                                        .Where(x => x.Name.LocalName.Equals("effective"))
+                                        .ToList()
+                                        .FirstOrDefault();
+                                if (firstOrDefault != null)
+                                {
+                                    var effective = firstOrDefault.Value;
+                                    if (INFO_REGEX_DIC[name].IsMatch(effective))
+                                    {
+                                        dt = new DateTime();
+                                        DateTime.TryParse(effective, out dt);
+                                        if (dtExpires < dt)
+                                        {
+                                            capValidateResults.Add(new CapValidateResult(name,
+                                                                                         string.Format(
+                                                                                             "{0}必須晚於effective.", name)));
+                                            continue;
+                                        }
+                                    }
+                                }
+                            }
                         }
                         if (INFO_VALID_DIC.ContainsKey(name))
                         {
@@ -324,32 +476,41 @@ namespace CapDocument
                         {
                             case "eventCode":
                             case "parameter":
-                                foreach (var elementName in new ArrayList() { "valueName", "value" })
+                                foreach (var elementName in new ArrayList() {"valueName", "value"})
                                 {
                                     if (!tag.Elements().Any(t => t.Name.LocalName.Equals(elementName)))
-                                        capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點缺少{1}.", name, elementName)));
+                                        capValidateResults.Add(new CapValidateResult(name,
+                                                                                     string.Format("{0}節點缺少{1}.", name,
+                                                                                                   elementName)));
                                 }
                                 break;
                             case "resource":
-                                foreach (var elementName in new ArrayList() { "resourceDesc", "mimeType" })
+                                foreach (var elementName in new ArrayList() {"resourceDesc", "mimeType"})
                                 {
                                     if (!tag.Elements().Any(t => t.Name.LocalName.Equals(elementName)))
-                                        capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點缺少{1}.", name, elementName)));
+                                        capValidateResults.Add(new CapValidateResult(name,
+                                                                                     string.Format("{0}節點缺少{1}.", name,
+                                                                                                   elementName)));
                                 }
                                 break;
                             case "area":
-                                foreach (var elementName in new ArrayList() { "areaDesc" })
+                                foreach (var elementName in new ArrayList() {"areaDesc"})
                                 {
                                     if (!tag.Elements().Any(t => t.Name.LocalName.Equals(elementName)))
-                                        capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點缺少{1}.", name, elementName)));
+                                        capValidateResults.Add(new CapValidateResult(name,
+                                                                                     string.Format("{0}節點缺少{1}.", name,
+                                                                                                   elementName)));
                                 }
                                 var geocodes = tag.Elements().Where(t => t.Name.LocalName.Equals("geocode"));
                                 foreach (var geocode in geocodes)
                                 {
-                                    foreach (var elementName in new ArrayList() { "valueName", "value" })
+                                    foreach (var elementName in new ArrayList() {"valueName", "value"})
                                     {
                                         if (!geocode.Elements().Any(t => t.Name.LocalName.Equals(elementName)))
-                                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點缺少{1}.", "geocode", elementName)));
+                                            capValidateResults.Add(new CapValidateResult(name,
+                                                                                         string.Format("{0}節點缺少{1}.",
+                                                                                                       "geocode",
+                                                                                                       elementName)));
                                     }
                                 }
                                 break;
@@ -357,7 +518,22 @@ namespace CapDocument
                     }
                 }
             }
+            else
+            {
+                capValidateResults.Add(new CapValidateResult("info", string.Format("{0}至少有一個以上.", "info")));
+            }
             return capValidateResults;
+        }
+
+        private static string GetObjectValue(Type type, string name, Object info)
+        {
+            var obj = type.GetProperty(name);
+            if (obj == null || obj.GetValue(info) == null)
+                return null;
+            var value = obj.GetValue(info).ToString();
+            if (string.IsNullOrEmpty(value))
+                return null;
+            return value;
         }
     }
 }
