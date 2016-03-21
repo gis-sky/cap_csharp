@@ -25,3 +25,12 @@ C:\Users\Hugh\Desktop\WorkSpace\cap_csharp\CapDocument\bin\Debug\Newtonsoft.Json
 C:\Users\Hugh\Desktop\WorkSpace\cap_csharp\CapDocument\obj\Debug\CapDocument.csprojResolveAssemblyReference.cache
 C:\Users\Hugh\Desktop\WorkSpace\cap_csharp\CapDocument\obj\Debug\CapDocument.dll
 C:\Users\Hugh\Desktop\WorkSpace\cap_csharp\CapDocument\obj\Debug\CapDocument.pdb
+D:\GIT\cap_validator\cap_csharp\CapDocument\bin\Debug\CapDocument.dll.config
+D:\GIT\cap_validator\cap_csharp\CapDocument\bin\Debug\CapDocument.XML
+D:\GIT\cap_validator\cap_csharp\CapDocument\bin\Debug\CapDocument.dll
+D:\GIT\cap_validator\cap_csharp\CapDocument\bin\Debug\CapDocument.pdb
+D:\GIT\cap_validator\cap_csharp\CapDocument\bin\Debug\Newtonsoft.Json.dll
+D:\GIT\cap_validator\cap_csharp\CapDocument\bin\Debug\Newtonsoft.Json.xml
+D:\GIT\cap_validator\cap_csharp\CapDocument\obj\Debug\CapDocument.csprojResolveAssemblyReference.cache
+D:\GIT\cap_validator\cap_csharp\CapDocument\obj\Debug\CapDocument.dll
+D:\GIT\cap_validator\cap_csharp\CapDocument\obj\Debug\CapDocument.pdb
