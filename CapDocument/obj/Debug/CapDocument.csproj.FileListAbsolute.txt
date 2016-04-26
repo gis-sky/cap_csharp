@@ -34,3 +34,12 @@ D:\GIT\cap_validator\cap_csharp\CapDocument\bin\Debug\Newtonsoft.Json.xml
 D:\GIT\cap_validator\cap_csharp\CapDocument\obj\Debug\CapDocument.csprojResolveAssemblyReference.cache
 D:\GIT\cap_validator\cap_csharp\CapDocument\obj\Debug\CapDocument.dll
 D:\GIT\cap_validator\cap_csharp\CapDocument\obj\Debug\CapDocument.pdb
+G:\Lexi\ProjectCode\NCDR_CAP_GIT\CapDocument\bin\Debug\CapDocument.dll.config
+G:\Lexi\ProjectCode\NCDR_CAP_GIT\CapDocument\bin\Debug\CapDocument.XML
+G:\Lexi\ProjectCode\NCDR_CAP_GIT\CapDocument\bin\Debug\CapDocument.dll
+G:\Lexi\ProjectCode\NCDR_CAP_GIT\CapDocument\bin\Debug\CapDocument.pdb
+G:\Lexi\ProjectCode\NCDR_CAP_GIT\CapDocument\bin\Debug\Newtonsoft.Json.dll
+G:\Lexi\ProjectCode\NCDR_CAP_GIT\CapDocument\bin\Debug\Newtonsoft.Json.xml
+G:\Lexi\ProjectCode\NCDR_CAP_GIT\CapDocument\obj\Debug\CapDocument.csprojResolveAssemblyReference.cache
+G:\Lexi\ProjectCode\NCDR_CAP_GIT\CapDocument\obj\Debug\CapDocument.dll
+G:\Lexi\ProjectCode\NCDR_CAP_GIT\CapDocument\obj\Debug\CapDocument.pdb

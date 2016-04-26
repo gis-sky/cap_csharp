@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -9,12 +10,12 @@ using System.Xml.Linq;
 
 namespace CapDocument
 {
-    class CapValidator
+    public class CapValidator
     {
-        private const string ALERT = "alert";
-        private const string INFO = "info";
+        public const string ALERT = "alert";
+        public const string INFO = "info";
 
-        private static readonly List<string> ALERT_TAGS = new List<string>()
+        public static readonly List<string> ALERT_TAGS = new List<string>()
             {
                 "identifier",
                 "sender",
@@ -22,10 +23,11 @@ namespace CapDocument
                 "status",
                 "msgType",
                 "scope",
-                "code"
+                "info"
+                //"code"
             };
 
-        private static readonly List<string> INFO_TAGS = new List<string>()
+        public static readonly List<string> INFO_TAGS = new List<string>()
             {
                 "language",
                 "category",
@@ -50,7 +52,7 @@ namespace CapDocument
                 "area"
             };
 
-        private static readonly List<string> INFO_OPTION_TAGS = new List<string>()
+        public static readonly List<string> INFO_OPTION_TAGS = new List<string>()
             {
                 "language",
                 "responseType",
@@ -67,15 +69,15 @@ namespace CapDocument
                 "resource"
             };
 
-        private static readonly Dictionary<string, Regex> INFO_REGEX_DIC = new Dictionary<string, Regex>()
+        public static readonly Dictionary<string, Regex> INFO_REGEX_DIC = new Dictionary<string, Regex>()
             {
                 {"effective", new Regex(@"\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d[-,+]\d\d:\d\d")},
                 {"onset", new Regex(@"\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d[-,+]\d\d:\d\d")},
                 {"expires", new Regex(@"\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d[-,+]\d\d:\d\d")},
-                {"headline", new Regex(@"^.{1,20}$")}
+                {"headline", new Regex(@"^.{1,80}$")}
             };
 
-        private static readonly Dictionary<string, List<string>> INFO_VALID_DIC = new Dictionary<string, List<string>>()
+        public static readonly Dictionary<string, List<string>> INFO_VALID_DIC = new Dictionary<string, List<string>>()
             {
                 {"category", new List<string>()
                     {
@@ -130,7 +132,7 @@ namespace CapDocument
                     }}
             };
 
-        private static readonly List<string> STATUS = new List<string>()
+        public static readonly List<string> STATUS = new List<string>()
             {
                 "Actual",
                 "Exercise",
@@ -139,7 +141,7 @@ namespace CapDocument
                 "Draft"
             };
 
-        private static readonly List<string> MSG_TYPE = new List<string>()
+        public static readonly List<string> MSG_TYPE = new List<string>()
             {
                 "Alert",
                 "Update",
@@ -148,7 +150,7 @@ namespace CapDocument
                 "Error"
             };
 
-        private static readonly List<string> SCOPE = new List<string>()
+        public static readonly List<string> SCOPE = new List<string>()
             {
                 "Public",
                 "Restricted",
@@ -165,136 +167,371 @@ namespace CapDocument
             var capValidateResults = new List<CapValidateResult>();
             foreach (var name in ALERT_TAGS)
             {
+                DateTime tester = new DateTime();
+                Regex regex = new Regex(@"^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d[-,+]\d\d:\d\d$");
                 switch (name)
                 {
                     case "sent":
-                        Regex regex = new Regex(@"\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d[-,+]\d\d:\d\d");
-                        if (!regex.IsMatch(capDocument.sent))
+                        if (!string.IsNullOrEmpty(capDocument.sent))
                         {
-                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}資料格式錯誤.", name)));
-                        }
-                        break;
-                    case "status":
-                        if (!STATUS.Contains(capDocument.status))
-                        {
-                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}資料格式錯誤.", name)));
-                        }
-                        break;
-                    case "msgType":
-                        if (!MSG_TYPE.Contains(capDocument.msgType))
-                        {
-                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}資料格式錯誤.", name)));
+                            if (!regex.IsMatch(capDocument.sent) || !DateTime.TryParse(capDocument.sent.ToString().Replace("T", " ").Replace("+08:00", ""), out tester))
+                            {
+                                capValidateResults.Add(new CapValidateResult(name, string.Format("{0}不是正確的時間格式：{1}", name, capDocument.sent)));
+                            }
                         }
                         else
                         {
-                            if (!capDocument.msgType.Equals("Alert") && string.IsNullOrEmpty(capDocument.references))
+                            capValidateResults.Add(new CapValidateResult(name, string.Format("發送的檔案中缺少{0}將造成讀取錯誤，請忽略後續錯誤並填入後重新檢核。", name)));
+                        }
+
+                        break;
+
+                    case "status":
+                        if (!string.IsNullOrEmpty(capDocument.status))
+                        {
+                            if (!STATUS.Contains(capDocument.status))
                             {
-                                capValidateResults.Add(new CapValidateResult("references", string.Format("{0}必須存在.", "references")));
+                                capValidateResults.Add(new CapValidateResult(name, string.Format("發送的檔案中缺少{0}", name)));
+                            }
+                        }
+                        else
+                        {
+                            capValidateResults.Add(new CapValidateResult(name, string.Format("發送的檔案中缺少{0}", name)));
+                        }
+                        break;
+
+                    case "msgType":
+                        if (!MSG_TYPE.Contains(capDocument.msgType))
+                        {
+                            capValidateResults.Add(new CapValidateResult(name, string.Format("發送的檔案中缺少{0}", name)));
+                        }
+                        else
+                        {
+                            if (!capDocument.msgType.Equals("Alert"))
+                            {
+                                if (string.IsNullOrEmpty(capDocument.references))
+                                {
+                                    capValidateResults.Add(new CapValidateResult("references", string.Format("msgType為{0}的示警檔案必須填寫references", capDocument.msgType)));
+                                    break;
+                                }
+                                StringBuilder ErrorsOfRefer = new StringBuilder();
+                                List<string> References = new List<string>();
+                                References = capDocument.references.Split(new Char[] { ' ' }).ToList();
+                                foreach (var triplet in References)
+                                {
+                                    int commaCheck = 0;
+                                    MatchCollection mc;
+                                    Regex r = new Regex(",");
+
+                                    commaCheck = r.Matches(triplet).Count;
+
+                                    if (commaCheck != 2)
+                                    {
+                                        capValidateResults.Add(new CapValidateResult("references", string.Format("references格式有誤(應為sender,identifier,sent三項一組並以空格分組)。此組填寫的內容為：{0}", "[" + triplet + "]"))); 
+                                        continue;
+                                    }
+                                    int firstComma = triplet.IndexOf(",");
+                                    int secondComma = triplet.Substring(firstComma + 1, triplet.Length - firstComma - 1).IndexOf(",") + firstComma;
+
+                                    if (firstComma == 0 && secondComma == 0)
+                                    {
+                                        ErrorsOfRefer.AppendLine("references格式有誤(應為sender,identifier,sent三項一組並以空格分組)：" + capDocument.references);
+                                    }
+                                    if (firstComma == 0 && secondComma != 0)
+                                    {
+                                        ErrorsOfRefer.AppendLine("references格式有誤(應為sender,identifier,sent三項一組並以空格分組)，其中缺少sender部分：" + capDocument.references);
+                                    }
+                                    if (firstComma != 0 && secondComma == 0)
+                                    {
+                                        ErrorsOfRefer.AppendLine("references格式有誤(應為sender,identifier,sent三項一組並以空格分組)，其中缺少sent部分：" + capDocument.references);
+                                    }
+                                    if (secondComma == firstComma)
+                                    {
+                                        ErrorsOfRefer.AppendLine("references格式有誤(應為sender,identifier,sent三項一組並以空格分組)，其中缺少identifier部分：" + capDocument.references);
+                                    }
+                                    string senderOfRefer = triplet.Substring(0, firstComma);
+                                    try
+                                    {
+                                        string idOfRefer = triplet.Substring(firstComma + 1, secondComma - firstComma);
+                                    }
+                                    catch (Exception)
+                                    {
+                                        ErrorsOfRefer.AppendLine("references格式有誤(應為sender,identifier,sent三項一組並以空格分組)：" + capDocument.references);
+                                    }
+                                    
+                                    string sentOfRefer = triplet.Substring(secondComma + 2, triplet.Length - secondComma - 2);
+
+                                    //檢查sent是否是標準時間格式
+                                    if (!regex.IsMatch(sentOfRefer) || !DateTime.TryParse(sentOfRefer.Replace("T", " ").Replace("+08:00", ""), out tester))
+                                    {
+                                        ErrorsOfRefer.AppendLine("references格式有誤(應為sender,identifier,sent三項一組並以空格分組)，其中sent非正確的時間格式：" + capDocument.references);
+                                    }
+                                    //ErrorsOfRefer.AppendLine("第一點" + firstComma + "第二點"+secondComma);
+                                }
+                                if (string.IsNullOrEmpty(ErrorsOfRefer.ToString()))
+                                {
+                                    break;
+                                }
+
+                                capValidateResults.Add(new CapValidateResult("references", ErrorsOfRefer.ToString()));
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrEmpty(capDocument.references))
+                                {
+                                    capValidateResults.Add(new CapValidateResult("references", string.Format("msgType為{0}的示警不得填寫references", capDocument.msgType)));
+                                    break;
+                                }
                             }
                         }
                         break;
+
                     case "scope":
                         if (!SCOPE.Contains(capDocument.scope))
                         {
-                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}資料格式錯誤.", name)));
+                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}資料錯誤{1}", name, capDocument.scope)));
                         }
                         else if (capDocument.scope.Equals("restricted"))
                         {
                             if (!string.IsNullOrEmpty(capDocument.restriction))
-                                capValidateResults.Add(new CapValidateResult("restriction", string.Format("必須要有{0}節點.", "restriction")));
+                                capValidateResults.Add(new CapValidateResult("restriction", string.Format("當scope為restricted時必須填寫{0}", "restriction")));
                         }
                         else if (capDocument.scope.Equals("private"))
                         {
                             if (!string.IsNullOrEmpty(capDocument.addresses))
-                                capValidateResults.Add(new CapValidateResult("addresses", string.Format("必須要有{0}節點.", "addresses")));
+                                capValidateResults.Add(new CapValidateResult("addresses", string.Format("當scope為private時必須填寫{0}", "addresses")));
                         }
                         break;
-                    case "code":
-                        if (!capDocument.code.Any())
-                        {
-                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}不可為空.", name)));
-                        }
-                        break;
+                    //case "code":
+                    //    if (!capDocument.code.Any())
+                    //    {
+                    //        capValidateResults.Add(new CapValidateResult(name, string.Format("{0}不可為空.", name)));
+                    //    }
+                    //    break;
                 }
             }
+
             var infos = capDocument.info;
             if (infos.Any())
             {
+                int InfoIndex = 1;
+                if (infos.Count == 1)
+                {
+                    InfoIndex = -1;
+                }
                 foreach (var info in infos)
                 {
-                    foreach (var name in INFO_TAGS)
+                    string responseType = info.responseType.FirstOrDefault();
+                    string category = info.category.FirstOrDefault();
+                    string infoText;
+                    if (InfoIndex == -1)
                     {
-                        var obj = typeof (Info).GetProperty(name);
-                        if (obj == null || obj.GetValue(info) == null)
-                            continue;
-                        var value = obj.GetValue(info).ToString();
-                        if (string.IsNullOrEmpty(value))
-                            continue;
-                        if (INFO_REGEX_DIC.ContainsKey(name))
+                        infoText = "";
+                    }
+                    else
+                    {
+                        infoText = string.Format("第{0}個", InfoIndex.ToString());
+                    }
+
+                    List<EventCode> eventCode = new List<EventCode>(info.eventCode);
+                    List<Resource> resource = new List<Resource>(info.resource);
+                    List<Parameter> parameter = new List<Parameter>(info.parameter);
+                    List<Area> area = new List<Area>(info.area);
+
+                    if (string.IsNullOrEmpty(info.expires))
+                    {
+                        capValidateResults.Add(new CapValidateResult("expires", infoText + "info中expires未填入任何值，請務必填入失效的日期與時間"));
+                    }
+
+                    if (area.Count > 0)
+                    {
+                        foreach (var itemArea in area)
                         {
-                            if (!INFO_REGEX_DIC[name].IsMatch(value))
+                            capValidateResults.AddRange(areaValidator(itemArea, InfoIndex));
+                        }
+                    }
+                    else
+                    {
+                        capValidateResults.Add(new CapValidateResult("area", infoText + "info中不含任何area，area至少要有一個以上"));
+                    }
+
+                    capValidateResults.AddRange(checkInfoValueByName(info, InfoIndex, "responseType", responseType));
+                    capValidateResults.AddRange(checkInfoValueByName(info, InfoIndex, "category", category));
+                    capValidateResults.AddRange(infoValidator(info, InfoIndex));
+                    InfoIndex++;
+                }
+            }
+            else
+            {
+                capValidateResults.Add(new CapValidateResult("info", string.Format("{0}至少要有一個以上，此檔案不含任何info", "info")));
+            }
+            return capValidateResults;
+        }
+
+        private static IEnumerable<CapValidateResult> areaValidator(Area itemArea, int index)
+        {
+            string infoIndex = index < 0 ? "" : "第" + index + "個info中";
+            var capValidateResults = new List<CapValidateResult>();
+
+            var areaDesc = itemArea.areaDesc;
+            if (string.IsNullOrEmpty(areaDesc))
+            {
+                capValidateResults.Add(new CapValidateResult("areaDesc", string.Format(infoIndex + "必須有{0}節點", "areaDesc")));
+            }
+            List<Geocode> geocode = new List<Geocode>(itemArea.geocode);
+            foreach (var itemGC in geocode)
+            {
+                if (string.IsNullOrEmpty(itemGC.valueName))
+                {
+                    capValidateResults.Add(new CapValidateResult("geocode", string.Format(infoIndex + "{2}Goecode沒有對應的值，Code:{0}，值：{1}", "空", itemGC.value, itemArea.areaDesc)));
+                }
+                if (string.IsNullOrEmpty(itemGC.value))
+                {
+                    capValidateResults.Add(new CapValidateResult("geocode", string.Format(infoIndex + "{2}Goecode沒有對應的值，Code:{0}，值：{1}", itemGC.valueName, "空", itemArea.areaDesc)));
+                }
+            }
+            return capValidateResults;
+        }
+
+        private static IEnumerable<CapValidateResult> infoValidator(Info info, int index)
+        {
+            var capValidateResults = new List<CapValidateResult>();
+
+            foreach (var name in INFO_TAGS)
+            {
+                var obj = typeof(Info).GetProperty(name);
+                if (obj == null || obj.GetValue(info, null) == null)
+                {
+                    //進入此處表示值為空，不做處理。
+                }
+                else
+                {
+                    var value = obj.GetValue(info, null).ToString();
+                    if (string.IsNullOrEmpty(value))
+                        continue;
+
+                    capValidateResults.AddRange(checkInfoValueByName(info, index, name, value));
+                }
+            }
+            return capValidateResults;
+        }
+
+        private static IEnumerable<CapValidateResult> checkInfoValueByName(Info info, int index, string name, string value)
+        {
+            string infoIndex = index < 0 ? "" : "第" + index + "個info中";
+            var capValidateResults = new List<CapValidateResult>();
+            DateTime tester = new DateTime();
+            Regex regex = new Regex(@"^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d[-,+]\d\d:\d\d$");
+
+            if (INFO_REGEX_DIC.ContainsKey(name))
+            {
+                if (!INFO_REGEX_DIC[name].IsMatch(value))
+                {
+                    capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "{0}資料錯誤：{1}", name, value)));
+                }
+                else
+                {
+                    switch (name)
+                    {
+                        case "effective":
+                            if (!string.IsNullOrEmpty(value))
                             {
-                                capValidateResults.Add(new CapValidateResult(name, string.Format("{0}資料格式錯誤.", name)));
-                                continue;
-                            }
-                            else if (name.Equals("expires"))
-                            {
-                                var dtExpires = new DateTime();
-                                DateTime.TryParse(value, out dtExpires);
-                                var onsetStr = GetObjectValue(typeof (Info), "onset", info);
-                                if (onsetStr != null)
+                                if (!regex.IsMatch(value) || !DateTime.TryParse(value.Replace("T", " ").Replace("+08:00", ""), out tester))
                                 {
-                                    if (INFO_REGEX_DIC[name].IsMatch(onsetStr))
+                                    capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "{0}不是正確的時間格式：{1}", name, value, index)));
+                                }
+                            }
+                            else
+                            {
+                                capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "缺少{0}將造成讀取錯誤，請忽略後續錯誤並填入後重新檢核。", name, index)));
+                            }
+                            break;
+                        case "onset":
+                            if (!regex.IsMatch(value) || !string.IsNullOrEmpty(value))
+                            {
+                                if (!DateTime.TryParse(value.Replace("T", " ").Replace("+08:00", ""), out tester))
+                                {
+                                    capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "{0}不是正確的時間格式：{1}", name, value, index)));
+                                }
+                            }
+                            else
+                            {
+                                capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "缺少{0}將造成讀取錯誤，請忽略後續錯誤並填入後重新檢核。", name, index)));
+                            }
+                            break;
+                        case "expires":
+                            if (!string.IsNullOrEmpty(value))
+                            {
+                                if (!regex.IsMatch(value) || !DateTime.TryParse(value.Replace("T", " ").Replace("+08:00", ""), out tester))
+                                {
+                                    capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "{0}不是正確的時間格式：{1}", name, value, index)));
+                                    break;
+                                }
+                                else
+                                {
+                                    if (tester < DateTime.Now)
                                     {
-                                        var dt = new DateTime();
-                                        DateTime.TryParse(onsetStr, out dt);
-                                        if (dtExpires < dt)
-                                        {
-                                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}必須晚於onset.", name)));
-                                            continue;
-                                        }
+                                        capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "{0}早於現在的時間，此示警現已失效：{1}", name, value, index)));
                                     }
                                 }
-                                var effectiveStr = GetObjectValue(typeof(Info), "effective", info);
-                                if (effectiveStr != null)
+                            }
+                            else
+                            {
+                                capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "缺少{0}將造成讀取錯誤，請忽略後續錯誤並填入後重新檢核。", name, index)));
+                            }
+                            break;
+                    }
+                    if (name.Equals("expires"))
+                    {
+                        var dtExpires = new DateTime();
+                        bool TimeFomat = DateTime.TryParse(value, out dtExpires);
+                        if (TimeFomat)
+                        {
+                            var onsetStr = GetObjectValue(typeof(Info), "onset", info);
+                            if (onsetStr != null)
+                            {
+                                var dt = new DateTime();
+                                DateTime.TryParse(onsetStr, out dt);
+                                if (dtExpires < dt)
                                 {
-                                    if (INFO_REGEX_DIC[name].IsMatch(effectiveStr))
-                                    {
-                                        var dt = new DateTime();
-                                        DateTime.TryParse(effectiveStr, out dt);
-                                        if (dtExpires < dt)
-                                        {
-                                            capValidateResults.Add(new CapValidateResult(name, string.Format("{0}必須晚於effective.", name)));
-                                            continue;
-                                        }
-                                    }
+                                    capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "{0}必須晚於onset：結束時間{0}-{2}早於開始時間onset-{1}", name, info.onset, value)));
+                                    //continue;
                                 }
                             }
-                        }
-                        else if (INFO_VALID_DIC.ContainsKey(name))
-                        {
-                            if (!INFO_VALID_DIC[name].Contains(value))
+                            var effectiveStr = GetObjectValue(typeof(Info), "effective", info);
+                            if (effectiveStr != null)
                             {
-                                capValidateResults.Add(new CapValidateResult(name, string.Format("{0}資料錯誤.", name)));
-                                continue;
+                                var dt = new DateTime();
+                                DateTime.TryParse(effectiveStr, out dt);
+                                if (dtExpires < dt)
+                                {
+                                    capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "{0}必須晚於effective：結束時間{0}-{2}早於生效時間effective-{1}", name, info.effective, value)));
+                                    //continue;
+                                }
                             }
-                        }
-                        else if (name.Equals("area"))
-                        {
-                            var areaDesc = GetObjectValue(typeof(Info), "areaDesc", info);
-                            if (string.IsNullOrEmpty(areaDesc))
+                            else
                             {
-                                capValidateResults.Add(new CapValidateResult("areaDesc", string.Format("必須有{0}節點.", "areaDesc")));
-                                continue;
+                                capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "必須要有{0}", name)));
+                                //continue;
                             }
                         }
                     }
                 }
             }
-            else
+            else if (INFO_VALID_DIC.ContainsKey(name))
             {
-                capValidateResults.Add(new CapValidateResult("info", string.Format("{0}至少有一個以上.", "info")));
+                if (!string.IsNullOrEmpty(value))
+                {
+                    if (!INFO_VALID_DIC[name].Contains(value))
+                    {
+                        {
+                            capValidateResults.Add(new CapValidateResult(name, string.Format(infoIndex + "{0}中填寫的值不正確，填寫的值為：{1}", name, value)));
+                        }
+                        //continue;
+                    }
+                }
             }
+
             return capValidateResults;
         }
 
@@ -339,12 +576,14 @@ namespace CapDocument
                                 capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點資料格式錯誤.", name)));
                         }
                         break;
+
                     case "status":
                         if (!STATUS.Contains(tag.Value))
                         {
                             capValidateResults.Add(new CapValidateResult(name, string.Format("{0}節點資料格式錯誤.", name)));
                         }
                         break;
+
                     case "msgType":
                         if (!MSG_TYPE.Contains(tag.Value))
                         {
@@ -362,6 +601,7 @@ namespace CapDocument
                             }
                         }
                         break;
+
                     case "scope":
                         if (!SCOPE.Contains(tag.Value))
                         {
@@ -476,7 +716,7 @@ namespace CapDocument
                         {
                             case "eventCode":
                             case "parameter":
-                                foreach (var elementName in new ArrayList() {"valueName", "value"})
+                                foreach (var elementName in new ArrayList() { "valueName", "value" })
                                 {
                                     if (!tag.Elements().Any(t => t.Name.LocalName.Equals(elementName)))
                                         capValidateResults.Add(new CapValidateResult(name,
@@ -484,8 +724,9 @@ namespace CapDocument
                                                                                                    elementName)));
                                 }
                                 break;
+
                             case "resource":
-                                foreach (var elementName in new ArrayList() {"resourceDesc", "mimeType"})
+                                foreach (var elementName in new ArrayList() { "resourceDesc", "mimeType" })
                                 {
                                     if (!tag.Elements().Any(t => t.Name.LocalName.Equals(elementName)))
                                         capValidateResults.Add(new CapValidateResult(name,
@@ -493,8 +734,9 @@ namespace CapDocument
                                                                                                    elementName)));
                                 }
                                 break;
+
                             case "area":
-                                foreach (var elementName in new ArrayList() {"areaDesc"})
+                                foreach (var elementName in new ArrayList() { "areaDesc" })
                                 {
                                     if (!tag.Elements().Any(t => t.Name.LocalName.Equals(elementName)))
                                         capValidateResults.Add(new CapValidateResult(name,
@@ -504,7 +746,7 @@ namespace CapDocument
                                 var geocodes = tag.Elements().Where(t => t.Name.LocalName.Equals("geocode"));
                                 foreach (var geocode in geocodes)
                                 {
-                                    foreach (var elementName in new ArrayList() {"valueName", "value"})
+                                    foreach (var elementName in new ArrayList() { "valueName", "value" })
                                     {
                                         if (!geocode.Elements().Any(t => t.Name.LocalName.Equals(elementName)))
                                             capValidateResults.Add(new CapValidateResult(name,
@@ -528,9 +770,9 @@ namespace CapDocument
         private static string GetObjectValue(Type type, string name, Object info)
         {
             var obj = type.GetProperty(name);
-            if (obj == null || obj.GetValue(info) == null)
+            if (obj == null || obj.GetValue(info, null) == null)
                 return null;
-            var value = obj.GetValue(info).ToString();
+            var value = obj.GetValue(info, null).ToString();
             if (string.IsNullOrEmpty(value))
                 return null;
             return value;
