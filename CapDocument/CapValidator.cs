@@ -216,13 +216,18 @@ namespace CapDocument
                                 }
                                 StringBuilder ErrorsOfRefer = new StringBuilder();
                                 List<string> References = new List<string>();
-                                References = capDocument.references.Split(new Char[] { ' ' }).ToList();
+                                References = capDocument.references.Replace("\n", String.Empty).Split(new Char[] { ' ' }).ToList();
                                 foreach (var triplet in References)
                                 {
                                     int commaCheck = 0;
                                     MatchCollection mc;
                                     Regex r = new Regex(",");
 
+                                    if (triplet == "")
+                                    {
+                                        continue;
+                                    }
+                                    
                                     commaCheck = r.Matches(triplet).Count;
 
                                     if (commaCheck != 2)
